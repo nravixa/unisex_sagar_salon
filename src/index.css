@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-primary text-cream/90 font-sans antialiased overflow-x-hidden leading-[1.6];
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-normal text-cream;
+  }
+}
+
+@layer utilities {
+  /* Fluid Typography Clamps */
+  /* Hero: mobile 4rem -> desktop 12rem */
+  .text-fluid-hero {
+    font-size: clamp(4rem, 10vw + 2rem, 12rem);
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+  }
+  
+  /* Section Headings: mobile 2.5rem -> desktop 5rem */
+  .text-fluid-heading {
+    font-size: clamp(2.5rem, 5vw + 1rem, 5rem);
+    line-height: 1.1;
+  }
+  
+  /* Subheadings: mobile 1.25rem -> desktop 2.5rem */
+  .text-fluid-sub {
+    font-size: clamp(1.25rem, 3vw + 0.5rem, 2.5rem);
+    line-height: 1.2;
+  }
+
+  /* Focus and Shadows */
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold-light focus-visible:ring-offset-2 focus-visible:ring-offset-primary;
+  }
+  
+  .shadow-luxury {
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(201, 166, 107, 0.05);
+  }
+}
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
