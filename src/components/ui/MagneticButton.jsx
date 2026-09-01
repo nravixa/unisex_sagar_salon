@@ -19,6 +19,16 @@ export function MagneticButton({ children, className = "", strength = 8 }) {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
+  // Fix sticking issue on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      x.set(0);
+      y.set(0);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [x, y]);
+
   const springX = useSpring(x, { stiffness: 150, damping: 15, mass: 0.1 });
   const springY = useSpring(y, { stiffness: 150, damping: 15, mass: 0.1 });
 

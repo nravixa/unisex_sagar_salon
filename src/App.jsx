@@ -17,7 +17,6 @@ import InstagramGallery from './components/InstagramGallery';
 import BookingCTA from './components/BookingCTA';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import FloatingWhatsApp from './components/FloatingWhatsApp';
 
 function App() {
   useEffect(() => {
@@ -91,7 +90,6 @@ function App() {
         <Contact />
       </main>
       <Footer />
-      <FloatingWhatsApp />
     </div>
   );
 }

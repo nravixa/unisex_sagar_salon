@@ -16,22 +16,30 @@
 
 @layer utilities {
   /* Fluid Typography Clamps */
-  /* Hero: mobile 4rem -> desktop 12rem */
+  /* Hero: mobile 2.5rem -> desktop 10rem to prevent iPhone SE overflow */
   .text-fluid-hero {
-    font-size: clamp(4rem, 10vw + 2rem, 12rem);
+    font-size: clamp(2.5rem, 8vw + 1rem, 10rem);
     line-height: 0.9;
     letter-spacing: -0.02em;
   }
   
-  /* Section Headings: mobile 2.5rem -> desktop 5rem */
+  @media (min-width: 1024px) {
+    .text-fluid-hero {
+      font-size: clamp(4rem, 6vw + 1rem, 7rem);
+      line-height: 0.95;
+      letter-spacing: 0em;
+    }
+  }
+  
+  /* Section Headings: mobile 2rem -> desktop 5rem */
   .text-fluid-heading {
-    font-size: clamp(2.5rem, 5vw + 1rem, 5rem);
+    font-size: clamp(2rem, 5vw + 1rem, 5rem);
     line-height: 1.1;
   }
   
-  /* Subheadings: mobile 1.25rem -> desktop 2.5rem */
+  /* Subheadings: mobile 1.125rem -> desktop 2.5rem */
   .text-fluid-sub {
-    font-size: clamp(1.25rem, 3vw + 0.5rem, 2.5rem);
+    font-size: clamp(1.125rem, 3vw + 0.5rem, 2.5rem);
     line-height: 1.2;
   }
 

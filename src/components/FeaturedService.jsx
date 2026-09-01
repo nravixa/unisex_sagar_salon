@@ -13,8 +13,8 @@ export default function FeaturedService() {
   const y = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
 
   return (
-    <section ref={containerRef} className="py-24 lg:py-0 bg-primary overflow-hidden">
-      <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
+    <section ref={containerRef} className="py-16 lg:py-0 bg-primary overflow-hidden">
+      <div className="grid grid-cols-1 lg:grid-cols-2 h-auto">
         
         {/* Image Side */}
         <div className="relative h-[60vh] lg:h-auto overflow-hidden order-2 lg:order-1">
@@ -42,7 +42,7 @@ export default function FeaturedService() {
               Featured Experience
             </span>
             
-            <h2 className="font-serif text-5xl md:text-7xl leading-tight">
+            <h2 className="font-serif text-fluid-heading leading-tight">
               FULL BODY <br />
               <span className="italic text-muted">MASSAGE</span>
             </h2>
@@ -58,7 +58,7 @@ export default function FeaturedService() {
             </p>
 
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 mt-8">
-              <Button href="https://wa.me/918329484163?text=Hi%20SAGAR%20Hair%20Studio,%20I%20would%20like%20to%20book%20a%20Full%20Body%20Massage." icon>Book Now</Button>
+              <Button href="https://wa.me/918329484163?text=Hello%20SAGAR%20Hair%20Studio%20%26%20Unisex%20Salon%2C%0AI%20would%20like%20to%20book%20an%20appointment.%0A%0AMy%20Requirements%3A%0AName%3A%0AService%20Required%3A%0APreferred%20Date%3A%0APreferred%20Time%3A%0A%0APlease%20let%20me%20know%20the%20available%20slot.%20Thank%20you." target="_blank" rel="noopener noreferrer" icon>Book Now</Button>
               <span className="font-sans text-xs tracking-widest text-gold-light">
                 ₹1500 · 60 MINUTES
               </span>

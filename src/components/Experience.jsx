@@ -28,7 +28,7 @@ export default function Experience() {
   const y = (shouldReduceMotion || isMobile) ? 0 : physicsY;
 
   return (
-    <section ref={ref} className="relative py-32 lg:py-48 overflow-hidden bg-primary flex items-center justify-center min-h-[60vh]">
+    <section ref={ref} className="relative py-20 lg:py-48 overflow-hidden bg-primary flex items-center justify-center min-h-[60vh]">
       <FadeIn duration={1.5} className="absolute inset-0 z-0 w-full h-full bg-primary overflow-hidden">
         <motion.div style={{ y, height: "116%" }} className="absolute -top-[8%] left-0 w-full origin-center">
           <PremiumImage 

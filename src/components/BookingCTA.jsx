@@ -3,7 +3,7 @@ import { Button } from './ui/Button';
 
 export default function BookingCTA() {
   return (
-    <section id="book" className="py-32 bg-[#050706] border-t border-b border-cream/10 relative overflow-hidden flex justify-center items-center">
+    <section id="book" className="py-20 bg-[#050706] border-t border-b border-cream/10 relative overflow-hidden flex justify-center items-center">
       {/* Decorative Elements */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1px] h-16 bg-gold-light/30"></div>
       
@@ -27,13 +27,21 @@ export default function BookingCTA() {
             Your next look starts here.
           </span>
           
-          <h2 className="font-serif text-5xl md:text-7xl lg:text-8xl leading-[0.9] text-cream">
+          <h2 className="font-serif text-fluid-heading leading-[0.9] text-cream">
             LET'S CREATE <br />
             <span className="italic text-muted">YOUR SIGNATURE.</span>
           </h2>
           
           <div className="flex flex-col sm:flex-row gap-6 mt-8 w-full sm:w-auto">
-            <Button icon className="w-full sm:w-auto">Book An Appointment</Button>
+            <Button 
+              href="https://wa.me/918329484163?text=Hello%20SAGAR%20Hair%20Studio%20%26%20Unisex%20Salon%2C%0AI%20would%20like%20to%20book%20an%20appointment.%0A%0AMy%20Requirements%3A%0AName%3A%0AService%20Required%3A%0APreferred%20Date%3A%0APreferred%20Time%3A%0A%0APlease%20let%20me%20know%20the%20available%20slot.%20Thank%20you." 
+              target="_blank"
+              rel="noopener noreferrer"
+              icon 
+              className="w-full sm:w-auto"
+            >
+              Book An Appointment
+            </Button>
             <Button href="tel:8329484163" variant="outline" className="w-full sm:w-auto">
               CALL 83294 84163
             </Button>

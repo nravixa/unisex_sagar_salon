@@ -7,7 +7,7 @@ import { PremiumImage } from './ui/PremiumImage';
 
 export default function InstagramGallery() {
   return (
-    <section className="py-24 lg:py-32 bg-primary">
+    <section className="py-16 lg:py-24 bg-primary">
       <div className="container mx-auto px-6 md:px-12 mb-16 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
         <SectionHeading subtitle="@SAGARHAIRSTUDIO">
           FOLLOW <br />

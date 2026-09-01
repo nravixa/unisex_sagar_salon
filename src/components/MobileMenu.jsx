@@ -45,14 +45,29 @@ export default function MobileMenu({ onClose }) {
       transition={{ duration: 0.5 }}
       className="fixed inset-0 z-[60] bg-emerald-dark/95 backdrop-blur-xl flex flex-col justify-center items-center"
     >
+      {/* Top Center Title */}
+      <motion.div 
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2 }}
+        className="absolute top-12 md:top-16 flex flex-col items-center gap-1 text-center"
+      >
+        <h2 className="font-serif text-2xl tracking-widest text-gold-light">
+          SAGAR
+        </h2>
+        <span className="font-sans text-[9px] tracking-[0.3em] text-cream/70 uppercase">
+          Hair Studio & Unisex Salon
+        </span>
+      </motion.div>
+
       <button 
         onClick={onClose}
-        className="absolute top-6 right-6 md:top-8 md:right-12 text-cream hover:text-gold-light transition-colors"
+        className="absolute top-6 right-6 md:top-8 md:right-12 text-cream hover:text-gold-light transition-colors z-10"
       >
         <X size={32} strokeWidth={1} />
       </button>
 
-      <div className="flex flex-col items-start gap-6 md:gap-8 max-w-2xl w-full px-12">
+      <div className="flex flex-col items-center gap-6 md:gap-8 max-w-2xl w-full px-12 mt-8">
         {links.map((link, i) => (
           <motion.a
             key={link.name}
@@ -62,12 +77,12 @@ export default function MobileMenu({ onClose }) {
             initial={{ y: 40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2 + (i * 0.1), duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="flex items-baseline gap-6 group w-max"
+            className="flex items-baseline gap-4 md:gap-6 group w-max text-center"
           >
             <span className="font-sans text-[10px] md:text-xs text-gold-light tracking-[0.2em] opacity-60 group-hover:opacity-100 transition-opacity">
-              {link.num}
+              •
             </span>
-            <span className="relative font-serif text-5xl md:text-7xl text-cream group-hover:text-gold-light transition-colors italic">
+            <span className="relative font-serif text-4xl sm:text-5xl md:text-7xl text-cream group-hover:text-gold-light transition-colors italic">
               {link.name}
               {/* Animated Underline */}
               <span className="absolute -bottom-1 left-0 w-full h-[1px] bg-gold-light scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-400 ease-[0.16,1,0.3,1]"></span>
@@ -82,13 +97,13 @@ export default function MobileMenu({ onClose }) {
         transition={{ delay: 1 }}
         className="absolute bottom-10 flex flex-col items-center gap-4"
       >
-        <span className="font-sans text-[10px] tracking-[0.3em] uppercase text-muted">
-          Sagar Hair Studio
-        </span>
         <a 
-          href="#book" 
-          data-mobile-link="true"
-          onClick={(e) => handleLinkClick(e, '#book')} 
+          href="https://wa.me/918329484163?text=Hello%20SAGAR%20Hair%20Studio%20%26%20Unisex%20Salon%2C%0AI%20would%20like%20to%20book%20an%20appointment.%0A%0AMy%20Requirements%3A%0AName%3A%0AService%20Required%3A%0APreferred%20Date%3A%0APreferred%20Time%3A%0A%0APlease%20let%20me%20know%20the%20available%20slot.%20Thank%20you." 
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={(e) => {
+            onClose();
+          }} 
           className="font-sans text-xs tracking-widest uppercase text-gold-light underline underline-offset-4"
         >
           Book Appointment

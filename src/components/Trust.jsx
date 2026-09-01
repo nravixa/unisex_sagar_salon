@@ -3,7 +3,7 @@ import { FadeUp } from './ui/animations/FadeUp';
 
 export default function Trust() {
   return (
-    <section className="py-24 bg-primary border-t border-b border-cream/10">
+    <section className="py-16 bg-primary border-t border-b border-cream/10">
       <div className="container mx-auto px-6 md:px-12 flex flex-col items-center">
         
         <FadeUp duration={1} className="text-center flex flex-col gap-8 w-full">

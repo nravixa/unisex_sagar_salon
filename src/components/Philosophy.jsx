@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 export default function Intro() {
   return (
-    <section id="about" className="py-24 lg:py-32 relative bg-primary overflow-hidden">
+    <section id="about" className="py-16 lg:py-24 relative bg-primary overflow-hidden">
       <div className="container mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-start">
           
@@ -25,7 +25,7 @@ export default function Intro() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="font-serif text-5xl md:text-7xl lg:text-[5.5rem] leading-[0.9] tracking-tighter"
+              className="font-serif text-fluid-heading leading-[0.9] tracking-tighter"
             >
               STYLE IS <br />
               <span className="italic text-gold-light">PERSONAL.</span>

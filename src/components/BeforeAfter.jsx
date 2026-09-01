@@ -35,7 +35,7 @@ export default function BeforeAfter() {
   }, [isResizing]);
 
   return (
-    <section className="py-24 lg:py-32 bg-secondary">
+    <section className="py-16 lg:py-24 bg-secondary">
       <div className="container mx-auto px-6 md:px-12">
         <SectionHeading number="04" className="mb-16 md:mb-24">
           THE <br />

@@ -19,7 +19,7 @@ export default function Services() {
   const activeData = serviceCategories.find(c => c.id === activeCategory);
 
   return (
-    <section id="services" className="py-24 lg:py-32 bg-secondary relative">
+    <section id="services" className="py-16 lg:py-24 bg-secondary relative">
       <div className="container mx-auto px-6 md:px-12">
         <SectionHeading number="02" className="mb-16 md:mb-24">
           {["THE MENU", "OF SERVICES"]}
@@ -134,7 +134,7 @@ function ServiceList({ category, isRica, setIsRica, getWhatsAppLink }) {
 
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-6 mb-4">
         <div>
-          <h3 className="hidden lg:block font-serif text-4xl text-cream mb-2">{category.title}</h3>
+          <h3 className="hidden lg:block font-serif text-fluid-sub text-cream mb-2">{category.title}</h3>
           <p className="font-sans text-sm tracking-widest text-muted uppercase">Premium Care</p>
         </div>
         
