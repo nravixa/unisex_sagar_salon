@@ -54,7 +54,7 @@ export default function Hero() {
       <div className="container mx-auto px-6 md:px-12 relative z-10 w-full h-full flex flex-col items-center justify-start text-center mt-2 md:mt-8">
 
         {/* Eyebrow */}
-        <FadeUp delay={0.4} duration={1} distance={20} className="flex items-center gap-2 mb-6 md:mb-5">
+        <FadeUp delay={0.4} duration={1} distance={20} className="flex items-center gap-2 mb-7 md:mb-5">
           <Sparkles className="text-gold-light w-4 h-4" />
           <span className="font-sans text-[9px] md:text-[11px] tracking-[0.3em] text-gold-light uppercase font-medium">
             WELCOME TO SAGAR HAIR STUDIO
@@ -62,7 +62,7 @@ export default function Hero() {
         </FadeUp>
 
         {/* Main Title - Mobile (Visible only on small screens) */}
-        <div className="flex md:hidden flex-col items-center w-full max-w-5xl mx-auto mb-8">
+        <div className="flex md:hidden flex-col items-center w-full max-w-5xl mx-auto mb-7">
           <TextReveal
             text={[
               "WHERE",
@@ -72,7 +72,7 @@ export default function Hero() {
               <span key="4" className="italic text-gold-light">BEAUTY</span>
             ]}
             as="h1"
-            className="font-serif text-fluid-hero tracking-tighter drop-shadow-2xl z-20 flex flex-col items-center text-cream gap-2"
+            className="font-serif text-fluid-hero-mobile tracking-normal drop-shadow-2xl z-20 flex flex-col items-center text-cream gap-2"
             delay={0.6}
             staggerDelay={0.15}
             duration={1.2}
@@ -95,14 +95,14 @@ export default function Hero() {
         </div>
 
         {/* Subtitle */}
-        <FadeUp delay={1.4} duration={1} distance={20} className="max-w-[280px] sm:max-w-md md:max-w-xl mx-auto mb-5 md:mb-10">
-          <p className="font-sans text-[11.5px] sm:text-[13px] md:text-base text-cream/90 font-light leading-[1.6]">
+        <FadeUp delay={1.4} duration={1} distance={20} className="w-[88%] max-w-[360px] sm:max-w-md md:max-w-xl mx-auto mb-7 md:mb-10">
+          <p className="font-sans text-[13px] sm:text-[14px] md:text-base text-cream/90 font-light leading-[1.65]">
             Luxury salon experience for Men, Women & Children with professional hairstyling, skincare, makeup, and premium beauty treatments.
           </p>
         </FadeUp>
 
         {/* CTA Buttons */}
-        <FadeUp delay={1.6} duration={1} distance={20} className="flex flex-col gap-2.5 w-full max-w-[280px] sm:max-w-xs md:max-w-[320px] mx-auto">
+        <FadeUp delay={1.6} duration={1} distance={20} className="flex flex-col gap-[14px] w-full max-w-[280px] sm:max-w-xs md:max-w-[320px] mx-auto">
           <Button
             href="https://wa.me/918329484163?text=Hello%20SAGAR%20Hair%20Studio%20%26%20Unisex%20Salon%2C%0AI%20would%20like%20to%20book%20an%20appointment.%0A%0AMy%20Requirements%3A%0AName%3A%0AService%20Required%3A%0APreferred%20Date%3A%0APreferred%20Time%3A%0A%0APlease%20let%20me%20know%20the%20available%20slot.%20Thank%20you."
             target="_blank"
