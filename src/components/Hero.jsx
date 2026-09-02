@@ -62,22 +62,27 @@ export default function Hero() {
         </FadeUp>
 
         {/* Main Title - Mobile (Visible only on small screens) */}
-        <div className="flex md:hidden flex-col items-center w-full max-w-5xl mx-auto mb-7">
-          <TextReveal
-            text={[
-              "WHERE",
-              "ELEGANCE",
-              "MEETS",
-              <span key="3" className="italic text-gold-light">TIMELESS</span>,
-              <span key="4" className="italic text-gold-light">BEAUTY</span>
-            ]}
-            as="h1"
-            className="font-serif text-fluid-hero-mobile tracking-normal drop-shadow-2xl z-20 flex flex-col items-center text-cream gap-2"
-            delay={0.6}
-            staggerDelay={0.15}
-            duration={1.2}
-          />
-        </div>
+        <motion.div 
+          className="flex md:hidden flex-col items-center w-full max-w-5xl mx-auto mb-7"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: { staggerChildren: 0.15, delayChildren: 0.6 }
+            }
+          }}
+        >
+          <h1 className="hero-mobile-title drop-shadow-2xl z-20 text-cream">
+            <motion.span variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] } } }}>WHERE</motion.span>
+            <motion.span variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] } } }}>ELEGANCE</motion.span>
+            <motion.span variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] } } }}>MEETS</motion.span>
+            <motion.span variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] } } }} className="gold">TIMELESS</motion.span>
+            <motion.span variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] } } }} className="gold">BEAUTY</motion.span>
+          </h1>
+        </motion.div>
 
         {/* Main Title - Desktop/Tablet (Visible on md and up) */}
         <div className="hidden md:flex flex-col items-center w-full max-w-5xl mx-auto mb-8">
