@@ -50,7 +50,7 @@ export default function Navbar() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 border-b border-cream/10 ${
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
           scrolled ? 'bg-primary/90 backdrop-blur-md py-3 md:py-4' : 'bg-transparent py-4 md:py-6'
         }`}
       >

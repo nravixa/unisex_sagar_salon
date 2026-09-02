@@ -19,7 +19,7 @@ export default function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
-    <section id="hero-section" ref={containerRef} className="relative w-full min-h-[85dvh] lg:min-h-screen h-auto overflow-hidden bg-primary flex flex-col pt-24 md:pt-32 pb-12 lg:pb-8">
+    <section id="hero-section" ref={containerRef} className="relative w-full min-h-[85svh] md:min-h-[85dvh] lg:min-h-screen h-auto overflow-hidden bg-primary flex flex-col pt-20 md:pt-32 pb-8 lg:pb-8">
       {/* Background Image */}
       <motion.div
         className="absolute inset-0 z-0 origin-center"
@@ -51,10 +51,10 @@ export default function Hero() {
       </motion.div>
 
       {/* Content */}
-      <div className="container mx-auto px-6 md:px-12 relative z-10 w-full h-full flex flex-col items-center justify-start text-center mt-4 md:mt-8">
+      <div className="container mx-auto px-6 md:px-12 relative z-10 w-full h-full flex flex-col items-center justify-start text-center mt-2 md:mt-8">
 
         {/* Eyebrow */}
-        <FadeUp delay={0.4} duration={1} distance={20} className="flex items-center gap-2 mb-3 md:mb-5">
+        <FadeUp delay={0.4} duration={1} distance={20} className="flex items-center gap-2 mb-2 md:mb-5">
           <Sparkles className="text-gold-light w-4 h-4" />
           <span className="font-sans text-[9px] md:text-[11px] tracking-[0.3em] text-gold-light uppercase font-medium">
             WELCOME TO SAGAR HAIR STUDIO
@@ -62,7 +62,7 @@ export default function Hero() {
         </FadeUp>
 
         {/* Main Title - Mobile (Visible only on small screens) */}
-        <div className="flex md:hidden flex-col items-center w-full max-w-5xl mx-auto mb-3">
+        <div className="flex md:hidden flex-col items-center w-full max-w-5xl mx-auto mb-2">
           <TextReveal
             text={[
               "WHERE",
@@ -95,26 +95,28 @@ export default function Hero() {
         </div>
 
         {/* Subtitle */}
-        <FadeUp delay={1.4} duration={1} distance={20} className="max-w-[280px] sm:max-w-md md:max-w-xl mx-auto mb-6 md:mb-10">
+        <FadeUp delay={1.4} duration={1} distance={20} className="max-w-[280px] sm:max-w-md md:max-w-xl mx-auto mb-5 md:mb-10">
           <p className="font-sans text-[11.5px] sm:text-[13px] md:text-base text-cream/90 font-light leading-[1.6]">
             Luxury salon experience for Men, Women & Children with professional hairstyling, skincare, makeup, and premium beauty treatments.
           </p>
         </FadeUp>
 
         {/* CTA Buttons */}
-        <FadeUp delay={1.6} duration={1} distance={20} className="flex flex-col gap-3 w-full sm:w-auto min-w-[280px] md:min-w-[320px]">
+        <FadeUp delay={1.6} duration={1} distance={20} className="flex flex-col gap-2.5 w-full max-w-[280px] sm:max-w-xs md:max-w-[320px] mx-auto">
           <Button
             href="https://wa.me/918329484163?text=Hello%20SAGAR%20Hair%20Studio%20%26%20Unisex%20Salon%2C%0AI%20would%20like%20to%20book%20an%20appointment.%0A%0AMy%20Requirements%3A%0AName%3A%0AService%20Required%3A%0APreferred%20Date%3A%0APreferred%20Time%3A%0A%0APlease%20let%20me%20know%20the%20available%20slot.%20Thank%20you."
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full bg-[#c9a66b] hover:bg-cream hover:border-cream !text-primary font-semibold py-4 md:py-5 text-[11px] md:text-[12px] tracking-widest uppercase"
+            magnetic={false}
+            className="w-full bg-[#c9a66b] hover:bg-cream hover:border-cream !text-primary font-semibold py-4 md:py-5 text-[11px] md:text-[12px] tracking-widest uppercase flex justify-center items-center text-center"
           >
             Book Appointment
           </Button>
           <Button
             href="#services"
             variant="outline"
-            className="w-full border-[#c9a66b]/40 !text-[#c9a66b] hover:bg-[#c9a66b]/10 hover:border-[#c9a66b] py-4 md:py-5 text-[11px] md:text-[12px] tracking-widest uppercase"
+            magnetic={false}
+            className="w-full border-[#c9a66b]/40 !text-[#c9a66b] hover:bg-[#c9a66b]/10 hover:border-[#c9a66b] py-4 md:py-5 text-[11px] md:text-[12px] tracking-widest uppercase flex justify-center items-center text-center"
           >
             Explore Services
           </Button>
