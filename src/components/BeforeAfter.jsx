@@ -2,6 +2,8 @@ import { useState, useRef, useEffect } from 'react';
 import { motion, useMotionValue, useTransform } from 'framer-motion';
 import { SectionHeading } from './ui/SectionHeading';
 import { PremiumImage } from './ui/PremiumImage';
+import beforeImg from '../assets/Images/before-image.png';
+import afterImg from '../assets/Images/after-image.png';
 
 export default function BeforeAfter() {
   const [isResizing, setIsResizing] = useState(false);
@@ -60,7 +62,7 @@ export default function BeforeAfter() {
           {/* Before Image (Background) */}
           <div className="absolute inset-0 w-full h-full grayscale">
             <PremiumImage 
-              src="/images/salon/before.jpg" 
+              src={beforeImg} 
               alt="Before Transformation" 
               className="w-full h-full"
               hover={false}
@@ -76,7 +78,7 @@ export default function BeforeAfter() {
             style={{ clipPath: `polygon(${sliderPosition}% 0, 100% 0, 100% 100%, ${sliderPosition}% 100%)` }}
           >
             <PremiumImage 
-              src="/images/salon/after.jpg" 
+              src={afterImg} 
               alt="After Transformation" 
               className="absolute inset-0 w-full h-full"
               hover={false}

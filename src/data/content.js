@@ -1,3 +1,10 @@
+import img1 from '../assets/Images/image 1.png';
+import img2 from '../assets/Images/image-2.jpg';
+import img3 from '../assets/Images/colour-img.jpg';
+import img4 from '../assets/Images/image-3.jpg';
+import img5 from '../assets/Images/image-4.jpg';
+import img6 from '../assets/Images/image-5.jpg';
+
 export const services = [
   {
     id: "01",
@@ -50,14 +57,12 @@ export const services = [
 ];
 
 export const gallery = [
-  { id: 1, image: "/images/lookbook/look-01.jpg", title: "Midnight Brunette", category: "Colour" },
-  { id: 2, image: "/images/lookbook/look-02.jpg", title: "Soft Texture", category: "Cut" },
-  { id: 3, image: "/images/lookbook/look-03.jpg", title: "Golden Hour", category: "Balayage" },
-  { id: 4, image: "/images/lookbook/look-04.jpg", title: "Sleek Glass", category: "Treatment" },
-  { id: 5, image: "/images/lookbook/look-05.jpg", title: "Dimensional Face Frame", category: "Colour" },
-  { id: 6, image: "/images/lookbook/look-06.jpg", title: "Voluminous Layers", category: "Style" },
-  { id: 7, image: "/images/lookbook/look-07.jpg", title: "Textured Crop", category: "Mens Styling" },
-  { id: 8, image: "/images/lookbook/look-08.jpg", title: "Bridal Elegance", category: "Bridal" }
+  { id: 1, image: img1, title: "Midnight Brunette", category: "Colour" },
+  { id: 2, image: img2, title: "Soft Texture", category: "Cut" },
+  { id: 3, image: img3, title: "Golden Hour", category: "Balayage" },
+  { id: 4, image: img4, title: "Sleek Glass", category: "Treatment" },
+  { id: 5, image: img5, title: "Dimensional Face Frame", category: "Colour" },
+  { id: 6, image: img6, title: "Voluminous Layers", category: "Style" }
 ];
 
 export const stylists = [
