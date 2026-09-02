@@ -13,7 +13,8 @@ export default function FloatingWhatsApp() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with us on WhatsApp"
-      className="fixed z-[100] right-[14px] md:right-[18px] lg:right-6 top-1/2 -translate-y-1/2 flex items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_4px_20px_rgba(37,211,102,0.3)] hover:shadow-[0_8px_30px_rgba(37,211,102,0.5)] transition-shadow backdrop-blur-sm border border-white/20 w-[48px] h-[48px] md:w-[52px] md:h-[52px] lg:w-[56px] lg:h-[56px]"
+      id="whatsapp-floating"
+      className="fixed z-[100] right-[14px] md:right-[18px] lg:right-6 bottom-[24px] md:bottom-[32px] lg:bottom-[40px] flex items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_4px_20px_rgba(37,211,102,0.3)] hover:shadow-[0_8px_30px_rgba(37,211,102,0.5)] transition-shadow backdrop-blur-sm border border-white/20 w-[48px] h-[48px] md:w-[52px] md:h-[52px] lg:w-[56px] lg:h-[56px]"
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       whileHover={{ scale: 1.08, y: -4 }}

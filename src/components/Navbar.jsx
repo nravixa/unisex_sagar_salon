@@ -23,6 +23,7 @@ export default function Navbar() {
     const handlePopState = () => {
       if (menuOpen) {
         setMenuOpen(false);
+        document.documentElement.classList.remove('menu-open');
       }
     };
     window.addEventListener('popstate', handlePopState);
@@ -31,11 +32,13 @@ export default function Navbar() {
 
   const openMenu = () => {
     setMenuOpen(true);
+    document.documentElement.classList.add('menu-open');
     window.history.pushState({ menu: true }, '');
   };
 
   const closeMenu = () => {
     setMenuOpen(false);
+    document.documentElement.classList.remove('menu-open');
     if (window.history.state?.menu) {
       window.history.back();
     }
