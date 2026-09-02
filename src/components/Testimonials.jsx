@@ -7,7 +7,7 @@ export default function Testimonials() {
     <section id="reviews" className="py-16 lg:py-24 bg-secondary">
       <div className="container mx-auto px-6 md:px-12">
         <SectionHeading number="05" subtitle="What our clients say" className="mb-16 md:mb-24 text-center md:text-left">
-          {["CLIENT", "EXPERIENCE"]}
+          {["CLIENT EXPERIENCE"]}
         </SectionHeading>
 
         <div className="max-w-4xl mx-auto flex flex-col items-center text-center justify-center">

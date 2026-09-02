@@ -53,8 +53,7 @@ export default function Lookbook() {
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 md:mb-24 gap-8 border-b border-cream/10 pb-8">
           <div className="relative">
             <SectionHeading number="03" subtitle="A curated collection of transformations." className="mb-0">
-              THE <br />
-              <span className="italic text-gold-light">LOOKBOOK</span>
+              THE LOOKBOOK
             </SectionHeading>
             
             <a 

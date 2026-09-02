@@ -38,8 +38,7 @@ export default function BeforeAfter() {
     <section className="py-16 lg:py-24 bg-secondary">
       <div className="container mx-auto px-6 md:px-12">
         <SectionHeading number="04" className="mb-16 md:mb-24">
-          THE <br />
-          <span className="italic text-gold-light">TRANSFORMATION</span>
+          THE TRANSFORMATION
         </SectionHeading>
 
         <motion.div 

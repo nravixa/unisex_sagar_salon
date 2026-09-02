@@ -43,8 +43,7 @@ export default function FeaturedService() {
             </span>
             
             <h2 className="font-serif text-fluid-heading leading-tight">
-              FULL BODY <br />
-              <span className="italic text-muted">MASSAGE</span>
+              FULL BODY <span className="italic text-muted">MASSAGE</span>
             </h2>
             
             <p className="font-sans text-xl text-cream/80 font-light tracking-wide">

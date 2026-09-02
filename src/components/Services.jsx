@@ -22,7 +22,7 @@ export default function Services() {
     <section id="services" className="py-16 lg:py-24 bg-secondary relative">
       <div className="container mx-auto px-6 md:px-12">
         <SectionHeading number="02" className="mb-16 md:mb-24">
-          {["THE MENU", "OF SERVICES"]}
+          {["THE MENU OF SERVICES"]}
         </SectionHeading>
 
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 relative">

@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import { TextReveal } from './ui/animations/TextReveal';
 import { FadeUp } from './ui/animations/FadeUp';
 import { Sparkles } from 'lucide-react';
+import heroImage from '../assets/Images/herosection.png';
 
 export default function Hero() {
   const containerRef = useRef(null);
@@ -18,7 +19,7 @@ export default function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
-    <section ref={containerRef} className="relative w-full min-h-[100dvh] lg:min-h-screen h-auto overflow-hidden bg-primary flex flex-col pt-20 pb-8">
+    <section id="hero-section" ref={containerRef} className="relative w-full min-h-[100dvh] lg:min-h-screen h-auto overflow-hidden bg-primary flex flex-col pt-20 pb-8">
       {/* Background Image */}
       <motion.div 
         className="absolute inset-0 z-0 origin-center"
@@ -31,7 +32,7 @@ export default function Hero() {
           className="w-full h-full relative bg-primary"
         >
           <motion.img 
-            src="/images/hero/hero-bg.jpg"
+            src={heroImage}
             alt="SAGAR Hair Studio Luxury Experience"
             className="w-full h-full object-cover object-center"
             initial={{ scale: 1.1 }}

@@ -12,8 +12,7 @@ export default function Stylists() {
           subtitle="Crafted by someone who understands the art of personal style."
           className="mb-16 md:mb-24 w-full"
         >
-          THE <br />
-          <span className="italic text-gold-light">ARTIST</span>
+          THE ARTIST
         </SectionHeading>
 
         <motion.div

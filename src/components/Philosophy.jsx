@@ -27,8 +27,7 @@ export default function Intro() {
               transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
               className="font-serif text-fluid-heading leading-[0.9] tracking-tighter"
             >
-              STYLE IS <br />
-              <span className="italic text-gold-light">PERSONAL.</span>
+              STYLE IS <span className="italic text-gold-light">PERSONAL.</span>
             </motion.h2>
           </div>
 

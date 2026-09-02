@@ -31,10 +31,11 @@
     }
   }
   
-  /* Section Headings: mobile 2rem -> desktop 5rem */
+  /* Section Headings: mobile 1.1rem -> desktop 5rem */
   .text-fluid-heading {
-    font-size: clamp(2rem, 5vw + 1rem, 5rem);
+    font-size: clamp(1.1rem, 6vw, 5rem);
     line-height: 1.1;
+    white-space: nowrap;
   }
   
   /* Subheadings: mobile 1.125rem -> desktop 2.5rem */

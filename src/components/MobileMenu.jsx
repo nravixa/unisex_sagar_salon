@@ -3,13 +3,12 @@ import { motion } from 'framer-motion';
 import { X } from 'lucide-react';
 
 const links = [
-  { name: 'HOME', href: '#', num: '01' },
-  { name: 'ABOUT', href: '#about', num: '02' },
-  { name: 'SERVICES', href: '#services', num: '03' },
-  { name: 'LOOKBOOK', href: '#lookbook', num: '04' },
-  { name: 'STYLISTS', href: '#stylists', num: '05' },
-  { name: 'REVIEWS', href: '#reviews', num: '06' },
-  { name: 'CONTACT', href: '#contact', num: '07' },
+  { name: 'HOME', href: '#' },
+  { name: 'ABOUT', href: '#about' },
+  { name: 'SERVICES', href: '#services' },
+  { name: 'GALLERY', href: '#lookbook' },
+  { name: 'CONTACT', href: '#contact' },
+  { name: 'BOOKING', href: 'https://wa.me/918329484163?text=Hello%20SAGAR%20Hair%20Studio%20%26%20Unisex%20Salon%2C%0AI%20would%20like%20to%20book%20an%20appointment.%0A%0AMy%20Requirements%3A%0AName%3A%0AService%20Required%3A%0APreferred%20Date%3A%0APreferred%20Time%3A%0A%0APlease%20let%20me%20know%20the%20available%20slot.%20Thank%20you.', external: true },
 ];
 
 export default function MobileMenu({ onClose }) {
@@ -21,16 +20,39 @@ export default function MobileMenu({ onClose }) {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [onClose]);
 
-  const handleLinkClick = (e, href) => {
+  const handleLinkClick = (e, link) => {
+    if (link.external) {
+      onClose();
+      return; // Browser handles external link
+    }
+    
     e.preventDefault();
     onClose();
     
+    // If we are not on the home page, route to home first
+    if (window.location.pathname !== '/') {
+      window.history.pushState({}, '', '/' + link.href);
+      window.dispatchEvent(new Event('popstate'));
+      
+      setTimeout(() => {
+        if (window.lenis) {
+          if (link.href === '#') {
+            window.lenis.scrollTo(0);
+          } else {
+            const el = document.getElementById(link.href.substring(1));
+            if (el) window.lenis.scrollTo(el, { offset: -80 });
+          }
+        }
+      }, 700);
+      return;
+    }
+
     setTimeout(() => {
       if (window.lenis) {
-        if (href === '#') {
+        if (link.href === '#') {
           window.lenis.scrollTo(0);
         } else {
-          const el = document.getElementById(href.substring(1));
+          const el = document.getElementById(link.href.substring(1));
           if (el) window.lenis.scrollTo(el, { offset: -80 });
         }
       }
@@ -73,7 +95,9 @@ export default function MobileMenu({ onClose }) {
             key={link.name}
             href={link.href}
             data-mobile-link="true"
-            onClick={(e) => handleLinkClick(e, link.href)}
+            onClick={(e) => handleLinkClick(e, link)}
+            target={link.external ? "_blank" : undefined}
+            rel={link.external ? "noopener noreferrer" : undefined}
             initial={{ y: 40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2 + (i * 0.1), duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
@@ -91,24 +115,6 @@ export default function MobileMenu({ onClose }) {
         ))}
       </div>
 
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1 }}
-        className="absolute bottom-10 flex flex-col items-center gap-4"
-      >
-        <a 
-          href="https://wa.me/918329484163?text=Hello%20SAGAR%20Hair%20Studio%20%26%20Unisex%20Salon%2C%0AI%20would%20like%20to%20book%20an%20appointment.%0A%0AMy%20Requirements%3A%0AName%3A%0AService%20Required%3A%0APreferred%20Date%3A%0APreferred%20Time%3A%0A%0APlease%20let%20me%20know%20the%20available%20slot.%20Thank%20you." 
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={(e) => {
-            onClose();
-          }} 
-          className="font-sans text-xs tracking-widest uppercase text-gold-light underline underline-offset-4"
-        >
-          Book Appointment
-        </a>
-      </motion.div>
     </motion.div>
   );
 }
