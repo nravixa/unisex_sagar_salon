@@ -18,33 +18,6 @@ export default function Footer() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 w-full border-t border-cream/10 pt-12 pb-12 text-center md:text-left">
-
-          <div className="flex flex-col gap-4 items-center md:items-start">
-            <h4 className="font-sans text-[10px] tracking-[0.2em] uppercase text-gold-light mb-2">Visit Us</h4>
-            <a
-              href={mapsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-sans text-sm text-cream/70 leading-relaxed hover:text-gold-light transition-colors block text-center md:text-left"
-            >
-              SAGAR Hair Studio & Unisex Salon in Kothrud Pune<br />
-              Shop Number 5, Radha Krishna Building<br />
-              Opposite Anandnagar Bus Stop, Near Hotel Palavi<br />
-              Rambaug Colony, Kothrud<br />
-              Pune, Maharashtra 411038
-            </a>
-          </div>
-
-          <div className="flex flex-col gap-4 items-center md:items-start">
-            <h4 className="font-sans text-[10px] tracking-[0.2em] uppercase text-gold-light mb-2">Contact & Hours</h4>
-            <p className="font-sans text-sm text-cream/70 leading-relaxed">
-              Phone: <a href="tel:+918329484163" className="hover:text-gold-light transition-colors">83294 84163</a><br />
-              Open Daily: 9:30 AM – 9:30 PM
-            </p>
-          </div>
-
-        </div>
 
         <div className="w-full flex flex-row justify-center items-center gap-3 md:gap-8 border-t border-cream/10 pt-8 whitespace-nowrap overflow-visible">
           <a href={mapsUrl} target="_blank" rel="noopener noreferrer" className="font-sans text-[8px] md:text-[10px] tracking-[0.2em] uppercase text-muted hover:text-gold-light transition-colors">Google Maps</a>

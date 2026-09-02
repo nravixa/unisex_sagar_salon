@@ -54,7 +54,7 @@ export default function Hero() {
       <div className="container mx-auto px-6 md:px-12 relative z-10 w-full h-full flex flex-col items-center justify-start text-center mt-2 md:mt-8">
 
         {/* Eyebrow */}
-        <FadeUp delay={0.4} duration={1} distance={20} className="flex items-center gap-2 mb-2 md:mb-5">
+        <FadeUp delay={0.4} duration={1} distance={20} className="flex items-center gap-2 mb-6 md:mb-5">
           <Sparkles className="text-gold-light w-4 h-4" />
           <span className="font-sans text-[9px] md:text-[11px] tracking-[0.3em] text-gold-light uppercase font-medium">
             WELCOME TO SAGAR HAIR STUDIO
@@ -62,7 +62,7 @@ export default function Hero() {
         </FadeUp>
 
         {/* Main Title - Mobile (Visible only on small screens) */}
-        <div className="flex md:hidden flex-col items-center w-full max-w-5xl mx-auto mb-2">
+        <div className="flex md:hidden flex-col items-center w-full max-w-5xl mx-auto mb-8">
           <TextReveal
             text={[
               "WHERE",
@@ -72,7 +72,7 @@ export default function Hero() {
               <span key="4" className="italic text-gold-light">BEAUTY</span>
             ]}
             as="h1"
-            className="font-serif text-fluid-hero tracking-tighter drop-shadow-2xl z-20 flex flex-col items-center text-cream gap-0"
+            className="font-serif text-fluid-hero tracking-tighter drop-shadow-2xl z-20 flex flex-col items-center text-cream gap-2"
             delay={0.6}
             staggerDelay={0.15}
             duration={1.2}

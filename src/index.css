@@ -19,9 +19,9 @@
   /* Fluid Typography Clamps */
   /* Hero: mobile huge -> desktop 10rem to match reference scale */
   .text-fluid-hero {
-    font-size: clamp(2.8rem, 13vw, 10rem);
-    line-height: 0.9;
-    letter-spacing: -0.02em;
+    font-size: clamp(3.2rem, 15vw, 10rem);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
   }
   
   @media (min-width: 1024px) {

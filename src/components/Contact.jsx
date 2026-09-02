@@ -99,7 +99,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="h-[400px] lg:h-full min-h-[400px] relative bg-secondary overflow-hidden border border-cream/10 grayscale hover:grayscale-0 transition-all duration-1000"
+            className="h-[400px] lg:h-full min-h-[400px] relative bg-secondary overflow-hidden border border-cream/10 transition-all duration-1000"
           >
             <iframe 
               src={`https://maps.google.com/maps?q=${encodeURIComponent("SAGAR Hair Studio & Unisex Salon in Kothrud Pune")}&t=&z=15&ie=UTF8&iwloc=&output=embed`}
