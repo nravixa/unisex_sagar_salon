@@ -61,14 +61,33 @@ export default function Hero() {
           </span>
         </FadeUp>
 
-        {/* Main Title */}
-        <div className="flex flex-col items-center w-full max-w-5xl mx-auto mb-4 md:mb-8">
+        {/* Main Title - Mobile (Visible only on small screens) */}
+        <div className="flex md:hidden flex-col items-center w-full max-w-5xl mx-auto mb-3">
+          <TextReveal
+            text={[
+              "WHERE",
+              "ELEGANCE",
+              "MEETS",
+              <span key="3" className="italic text-gold-light">TIMELESS</span>,
+              <span key="4" className="italic text-gold-light">BEAUTY</span>
+            ]}
+            as="h1"
+            className="font-serif text-fluid-hero tracking-tighter drop-shadow-2xl z-20 flex flex-col items-center text-cream gap-0"
+            delay={0.6}
+            staggerDelay={0.15}
+            duration={1.2}
+          />
+        </div>
+
+        {/* Main Title - Desktop/Tablet (Visible on md and up) */}
+        <div className="hidden md:flex flex-col items-center w-full max-w-5xl mx-auto mb-8">
           <TextReveal
             text={[
               "WHERE ELEGANCE MEETS",
-              <span key="3" className="italic text-gold-light">TIMELESS BEAUTY</span>]}
+              <span key="3" className="italic text-gold-light">TIMELESS BEAUTY</span>
+            ]}
             as="h1"
-            className="font-serif text-fluid-hero tracking-tighter drop-shadow-2xl z-20 flex flex-col items-center text-cream gap-0 md:gap-2 lg:gap-4"
+            className="font-serif text-fluid-hero tracking-tighter drop-shadow-2xl z-20 flex flex-col items-center text-cream gap-2 lg:gap-4"
             delay={0.6}
             staggerDelay={0.15}
             duration={1.2}
@@ -76,8 +95,8 @@ export default function Hero() {
         </div>
 
         {/* Subtitle */}
-        <FadeUp delay={1.4} duration={1} distance={20} className="max-w-md md:max-w-xl mx-auto mb-8 md:mb-10">
-          <p className="font-sans text-[13px] md:text-base text-cream/90 font-light leading-relaxed">
+        <FadeUp delay={1.4} duration={1} distance={20} className="max-w-[280px] sm:max-w-md md:max-w-xl mx-auto mb-6 md:mb-10">
+          <p className="font-sans text-[11.5px] sm:text-[13px] md:text-base text-cream/90 font-light leading-[1.6]">
             Luxury salon experience for Men, Women & Children with professional hairstyling, skincare, makeup, and premium beauty treatments.
           </p>
         </FadeUp>

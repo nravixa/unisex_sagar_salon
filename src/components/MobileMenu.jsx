@@ -139,14 +139,15 @@ export default function MobileMenu({ onClose }) {
           initial={{ y: 40, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2 + (links.length * 0.1), duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-6 w-full max-w-[280px]"
+          className="mt-6 w-full max-w-[280px] flex justify-center"
         >
           <Button 
             href={BOOKING_LINK}
             target="_blank"
             rel="noopener noreferrer"
             onClick={onClose}
-            className="w-full bg-[#c9a66b] hover:bg-cream hover:border-cream !text-primary font-semibold py-4 md:py-5 text-[11px] md:text-[12px] tracking-widest uppercase"
+            magnetic={false}
+            className="w-full bg-[#c9a66b] hover:bg-cream hover:border-cream !text-primary font-semibold py-4 md:py-5 text-[11px] md:text-[12px] tracking-widest uppercase flex justify-center items-center text-center"
           >
             Book Appointment
           </Button>
