@@ -9,7 +9,7 @@ import heroImage from '../assets/Images/herosection.png';
 export default function Hero() {
   const containerRef = useRef(null);
   const shouldReduceMotion = useReducedMotion();
-  
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"]
@@ -19,19 +19,19 @@ export default function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
-    <section id="hero-section" ref={containerRef} className="relative w-full min-h-[85dvh] lg:min-h-screen h-auto overflow-hidden bg-primary flex flex-col pt-24 md:pt-28 pb-12 lg:pb-8">
+    <section id="hero-section" ref={containerRef} className="relative w-full min-h-[85dvh] lg:min-h-screen h-auto overflow-hidden bg-primary flex flex-col pt-24 md:pt-32 pb-12 lg:pb-8">
       {/* Background Image */}
-      <motion.div 
+      <motion.div
         className="absolute inset-0 z-0 origin-center"
         initial={{ scale: shouldReduceMotion ? 1 : 1.08, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
       >
-        <motion.div 
-          style={shouldReduceMotion ? {} : { y, opacity }} 
+        <motion.div
+          style={shouldReduceMotion ? {} : { y, opacity }}
           className="w-full h-full relative bg-primary"
         >
-          <motion.img 
+          <motion.img
             src={heroImage}
             alt="SAGAR Hair Studio Luxury Experience"
             className="w-full h-full object-cover object-center"
@@ -40,7 +40,7 @@ export default function Hero() {
             transition={{ duration: 10, ease: "linear" }}
           />
           {/* Dark overlay */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0.85 }}
             animate={{ opacity: 0.65 }}
             transition={{ duration: 1.5, ease: "easeOut" }}
@@ -51,27 +51,24 @@ export default function Hero() {
       </motion.div>
 
       {/* Content */}
-      <div className="container mx-auto px-6 md:px-12 relative z-10 w-full h-full flex flex-col items-center justify-center text-center my-auto">
-        
+      <div className="container mx-auto px-6 md:px-12 relative z-10 w-full h-full flex flex-col items-center justify-start text-center mt-4 md:mt-8">
+
         {/* Eyebrow */}
-        <FadeUp delay={0.4} duration={1} distance={20} className="flex items-center gap-3 mb-4 md:mb-6 mt-4">
+        <FadeUp delay={0.4} duration={1} distance={20} className="flex items-center gap-2 mb-3 md:mb-5">
           <Sparkles className="text-gold-light w-4 h-4" />
-          <span className="font-sans text-[10px] md:text-[11px] tracking-[0.3em] text-gold-light uppercase font-medium">
+          <span className="font-sans text-[9px] md:text-[11px] tracking-[0.3em] text-gold-light uppercase font-medium">
             WELCOME TO SAGAR HAIR STUDIO
           </span>
         </FadeUp>
 
         {/* Main Title */}
-        <div className="flex flex-col items-center w-full max-w-5xl mx-auto mb-6 md:mb-8">
-          <TextReveal 
+        <div className="flex flex-col items-center w-full max-w-5xl mx-auto mb-4 md:mb-8">
+          <TextReveal
             text={[
-              "WHERE ELEGANCE", 
-              "MEETS", 
-              <span key="3" className="italic text-gold-light">TIMELESS</span>,
-              <span key="4" className="italic text-gold-light">BEAUTY</span>
-            ]} 
-            as="h1" 
-            className="font-serif text-fluid-hero tracking-tighter drop-shadow-2xl z-20 flex flex-col items-center text-cream gap-2 md:gap-4 lg:gap-6"
+              "WHERE ELEGANCE MEETS",
+              <span key="3" className="italic text-gold-light">TIMELESS BEAUTY</span>]}
+            as="h1"
+            className="font-serif text-fluid-hero tracking-tighter drop-shadow-2xl z-20 flex flex-col items-center text-cream gap-0 md:gap-2 lg:gap-4"
             delay={0.6}
             staggerDelay={0.15}
             duration={1.2}
@@ -79,26 +76,26 @@ export default function Hero() {
         </div>
 
         {/* Subtitle */}
-        <FadeUp delay={1.4} duration={1} distance={20} className="max-w-xl mx-auto mb-8 md:mb-10">
-          <p className="font-sans text-sm md:text-base text-cream/80 font-light leading-relaxed">
+        <FadeUp delay={1.4} duration={1} distance={20} className="max-w-md md:max-w-xl mx-auto mb-8 md:mb-10">
+          <p className="font-sans text-[13px] md:text-base text-cream/90 font-light leading-relaxed">
             Luxury salon experience for Men, Women & Children with professional hairstyling, skincare, makeup, and premium beauty treatments.
           </p>
         </FadeUp>
 
         {/* CTA Buttons */}
-        <FadeUp delay={1.6} duration={1} distance={20} className="flex flex-col gap-4 w-full sm:w-auto min-w-[280px] md:min-w-[320px]">
-          <Button 
-            href="https://wa.me/918329484163?text=Hello%20SAGAR%20Hair%20Studio%20%26%20Unisex%20Salon%2C%0AI%20would%20like%20to%20book%20an%20appointment.%0A%0AMy%20Requirements%3A%0AName%3A%0AService%20Required%3A%0APreferred%20Date%3A%0APreferred%20Time%3A%0A%0APlease%20let%20me%20know%20the%20available%20slot.%20Thank%20you." 
+        <FadeUp delay={1.6} duration={1} distance={20} className="flex flex-col gap-3 w-full sm:w-auto min-w-[280px] md:min-w-[320px]">
+          <Button
+            href="https://wa.me/918329484163?text=Hello%20SAGAR%20Hair%20Studio%20%26%20Unisex%20Salon%2C%0AI%20would%20like%20to%20book%20an%20appointment.%0A%0AMy%20Requirements%3A%0AName%3A%0AService%20Required%3A%0APreferred%20Date%3A%0APreferred%20Time%3A%0A%0APlease%20let%20me%20know%20the%20available%20slot.%20Thank%20you."
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full bg-[#c9a66b] hover:bg-cream hover:border-cream !text-primary font-semibold py-5"
+            className="w-full bg-[#c9a66b] hover:bg-cream hover:border-cream !text-primary font-semibold py-4 md:py-5 text-[11px] md:text-[12px] tracking-widest uppercase"
           >
             Book Appointment
           </Button>
-          <Button 
-            href="#services" 
-            variant="outline" 
-            className="w-full border-[#c9a66b]/40 !text-[#c9a66b] hover:bg-[#c9a66b]/10 hover:border-[#c9a66b] py-5"
+          <Button
+            href="#services"
+            variant="outline"
+            className="w-full border-[#c9a66b]/40 !text-[#c9a66b] hover:bg-[#c9a66b]/10 hover:border-[#c9a66b] py-4 md:py-5 text-[11px] md:text-[12px] tracking-widest uppercase"
           >
             Explore Services
           </Button>

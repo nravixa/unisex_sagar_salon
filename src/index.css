@@ -6,7 +6,8 @@
 
 @layer base {
   body {
-    @apply bg-primary text-cream/90 font-sans antialiased overflow-x-hidden leading-[1.6];
+    @apply bg-primary text-cream/90 font-sans antialiased leading-[1.6];
+    overflow-x: clip; /* Safer alternative for mobile scrolling compared to hidden */
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -16,16 +17,16 @@
 
 @layer utilities {
   /* Fluid Typography Clamps */
-  /* Hero: mobile 2.5rem -> desktop 10rem to prevent iPhone SE overflow */
+  /* Hero: mobile huge -> desktop 10rem to match reference scale */
   .text-fluid-hero {
-    font-size: clamp(2.5rem, 8vw + 1rem, 10rem);
-    line-height: 0.9;
-    letter-spacing: -0.02em;
+    font-size: clamp(3.5rem, 14vw, 10rem);
+    line-height: 0.95;
+    letter-spacing: -0.01em;
   }
   
   @media (min-width: 1024px) {
     .text-fluid-hero {
-      font-size: clamp(4rem, 6vw + 1rem, 7rem);
+      font-size: clamp(4.5rem, 7vw + 1rem, 7.5rem);
       line-height: 0.95;
       letter-spacing: 0em;
     }

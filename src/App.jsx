@@ -96,11 +96,10 @@ function App() {
 
     window.addEventListener('popstate', handleLocationChange);
     
-    // Create an observer to track Hero and Footer visibility
+    // Performant observer to track Hero and Footer visibility
     const observer = new IntersectionObserver((entries) => {
       let isHeroOrFooterVisible = false;
       
-      // Check if Hero or Footer is intersecting
       const hero = document.getElementById('hero-section');
       const footer = document.getElementById('footer-section');
       
@@ -118,49 +117,25 @@ function App() {
         }
       }
 
-      setShowWhatsApp(!isHeroOrFooterVisible && currentPath === '/');
+      setShowWhatsApp(!isHeroOrFooterVisible && window.location.pathname === '/');
     }, {
       root: null,
-      threshold: 0,
+      threshold: [0, 0.1, 0.5, 0.9, 1],
       rootMargin: "0px"
     });
 
-    // Instead of relying purely on the observer callback which might not trigger smoothly on fast scrolls,
-    // we can attach a scroll listener that checks the bounds of Hero and Footer.
-    const handleScrollForWA = () => {
-      let isHidden = false;
-      
+    // Start observing after a short delay to ensure elements exist
+    const startObserving = setTimeout(() => {
       const hero = document.getElementById('hero-section');
       const footer = document.getElementById('footer-section');
-      
-      if (hero) {
-        const rect = hero.getBoundingClientRect();
-        // If hero is in view
-        if (rect.top < window.innerHeight && rect.bottom > 0) {
-          isHidden = true;
-        }
-      }
-      
-      if (footer) {
-        const rect = footer.getBoundingClientRect();
-        // If footer is in view
-        if (rect.top < window.innerHeight && rect.bottom > 0) {
-          isHidden = true;
-        }
-      }
-      
-      // If we are not on the main page, we can show it everywhere, or hide it everywhere?
-      // "I want the WhatsApp floating button to be visible throughout the website EXCEPT in these two sections"
-      // If we are on Privacy Policy, there is no hero or footer. Wait, there IS a footer!
-      setShowWhatsApp(!isHidden);
-    };
-
-    window.addEventListener('scroll', handleScrollForWA);
-    handleScrollForWA(); // Initial check
+      if (hero) observer.observe(hero);
+      if (footer) observer.observe(footer);
+    }, 500);
 
     return () => {
       window.removeEventListener('popstate', handleLocationChange);
-      window.removeEventListener('scroll', handleScrollForWA);
+      clearTimeout(startObserving);
+      observer.disconnect();
     };
   }, [currentPath]);
 

@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { X } from 'lucide-react';
+import { Button } from './ui/Button';
 
 const links = [
   { name: 'HOME', href: '#' },
@@ -8,16 +9,35 @@ const links = [
   { name: 'SERVICES', href: '#services' },
   { name: 'GALLERY', href: '#lookbook' },
   { name: 'CONTACT', href: '#contact' },
-  { name: 'BOOKING', href: 'https://wa.me/918329484163?text=Hello%20SAGAR%20Hair%20Studio%20%26%20Unisex%20Salon%2C%0AI%20would%20like%20to%20book%20an%20appointment.%0A%0AMy%20Requirements%3A%0AName%3A%0AService%20Required%3A%0APreferred%20Date%3A%0APreferred%20Time%3A%0A%0APlease%20let%20me%20know%20the%20available%20slot.%20Thank%20you.', external: true },
 ];
+
+const BOOKING_LINK = 'https://wa.me/918329484163?text=Hello%20SAGAR%20Hair%20Studio%20%26%20Unisex%20Salon%2C%0AI%20would%20like%20to%20book%20an%20appointment.%0A%0AMy%20Requirements%3A%0AName%3A%0AService%20Required%3A%0APreferred%20Date%3A%0APreferred%20Time%3A%0A%0APlease%20let%20me%20know%20the%20available%20slot.%20Thank%20you.';
 
 export default function MobileMenu({ onClose }) {
   useEffect(() => {
+    // 1. Strict Scroll Lock
+    const originalStyle = window.getComputedStyle(document.body).overflow;
+    document.body.style.overflow = 'hidden';
+    
+    // Stop Lenis smooth scroll if it's running
+    if (window.lenis) {
+      window.lenis.stop();
+    }
+
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') onClose();
     };
     window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    
+    return () => {
+      // Restore natural scrolling exactly as it was
+      document.body.style.overflow = originalStyle;
+      
+      if (window.lenis) {
+        window.lenis.start();
+      }
+      window.removeEventListener('keydown', handleKeyDown);
+    };
   }, [onClose]);
 
   const handleLinkClick = (e, link) => {
@@ -103,7 +123,7 @@ export default function MobileMenu({ onClose }) {
             transition={{ delay: 0.2 + (i * 0.1), duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="flex items-baseline gap-4 md:gap-6 group w-max text-center"
           >
-            <span className="font-sans text-[10px] md:text-xs text-gold-light tracking-[0.2em] opacity-60 group-hover:opacity-100 transition-opacity">
+            <span className="font-sans text-[10px] md:text-xs text-gold-light tracking-[0.2em] transition-opacity opacity-60 group-hover:opacity-100">
               •
             </span>
             <span className="relative font-serif text-4xl sm:text-5xl md:text-7xl text-cream group-hover:text-gold-light transition-colors italic">
@@ -113,6 +133,24 @@ export default function MobileMenu({ onClose }) {
             </span>
           </motion.a>
         ))}
+
+        {/* Booking CTA Button */}
+        <motion.div
+          initial={{ y: 40, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.2 + (links.length * 0.1), duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-6 w-full max-w-[280px]"
+        >
+          <Button 
+            href={BOOKING_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={onClose}
+            className="w-full bg-[#c9a66b] hover:bg-cream hover:border-cream !text-primary font-semibold py-4 md:py-5 text-[11px] md:text-[12px] tracking-widest uppercase"
+          >
+            Book Appointment
+          </Button>
+        </motion.div>
       </div>
 
     </motion.div>
