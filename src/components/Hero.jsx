@@ -19,7 +19,7 @@ export default function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
-    <section id="hero-section" ref={containerRef} className="relative w-full min-h-[100dvh] lg:min-h-screen h-auto overflow-hidden bg-primary flex flex-col pt-20 pb-8">
+    <section id="hero-section" ref={containerRef} className="relative w-full min-h-[85dvh] lg:min-h-screen h-auto overflow-hidden bg-primary flex flex-col pt-24 md:pt-28 pb-12 lg:pb-8">
       {/* Background Image */}
       <motion.div 
         className="absolute inset-0 z-0 origin-center"
@@ -51,10 +51,10 @@ export default function Hero() {
       </motion.div>
 
       {/* Content */}
-      <div className="container mx-auto px-6 md:px-12 relative z-10 w-full h-full flex flex-col items-center justify-center text-center">
+      <div className="container mx-auto px-6 md:px-12 relative z-10 w-full h-full flex flex-col items-center justify-center text-center my-auto">
         
         {/* Eyebrow */}
-        <FadeUp delay={0.4} duration={1} distance={20} className="flex items-center gap-3 mb-6 md:mb-8">
+        <FadeUp delay={0.4} duration={1} distance={20} className="flex items-center gap-3 mb-4 md:mb-6 mt-4">
           <Sparkles className="text-gold-light w-4 h-4" />
           <span className="font-sans text-[10px] md:text-[11px] tracking-[0.3em] text-gold-light uppercase font-medium">
             WELCOME TO SAGAR HAIR STUDIO
@@ -62,7 +62,7 @@ export default function Hero() {
         </FadeUp>
 
         {/* Main Title */}
-        <div className="flex flex-col items-center w-full max-w-5xl mx-auto mb-8">
+        <div className="flex flex-col items-center w-full max-w-5xl mx-auto mb-6 md:mb-8">
           <TextReveal 
             text={[
               "WHERE ELEGANCE", 
@@ -79,7 +79,7 @@ export default function Hero() {
         </div>
 
         {/* Subtitle */}
-        <FadeUp delay={1.4} duration={1} distance={20} className="max-w-xl mx-auto mb-10 md:mb-12">
+        <FadeUp delay={1.4} duration={1} distance={20} className="max-w-xl mx-auto mb-8 md:mb-10">
           <p className="font-sans text-sm md:text-base text-cream/80 font-light leading-relaxed">
             Luxury salon experience for Men, Women & Children with professional hairstyling, skincare, makeup, and premium beauty treatments.
           </p>

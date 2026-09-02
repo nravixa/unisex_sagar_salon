@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { cn } from './Button';
 import { ImageIcon } from 'lucide-react';
 
@@ -13,9 +13,17 @@ export function PremiumImage({
 }) {
   const [hasError, setHasError] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
+  const imgRef = useRef(null);
 
   // If priority is true, don't lazy load
   const loadStrategy = priority ? 'eager' : loading;
+
+  useEffect(() => {
+    // If the image is already complete (e.g. from cache), mark as loaded immediately
+    if (imgRef.current && imgRef.current.complete) {
+      setIsLoaded(true);
+    }
+  }, [src]);
 
   if (hasError) {
     return (
@@ -34,17 +42,19 @@ export function PremiumImage({
   return (
     <div className={cn("relative overflow-hidden w-full h-full group bg-secondary", className)}>
       <img
+        ref={imgRef}
         src={src}
         alt={alt}
         loading={loadStrategy}
+        decoding={priority ? "sync" : "async"}
         onError={() => setHasError(true)}
         onLoad={() => setIsLoaded(true)}
         style={{ objectPosition }}
         className={cn(
           "w-full h-full object-cover transition-all ease-[0.16,1,0.3,1]",
           hover && "group-hover:scale-105 duration-[800ms]",
-          !hover && "duration-500",
-          isLoaded ? "opacity-100" : "opacity-0 scale-110 blur-sm"
+          !hover && "duration-[600ms]",
+          isLoaded ? "opacity-100" : "opacity-0 blur-sm scale-[1.02]"
         )}
       />
     </div>

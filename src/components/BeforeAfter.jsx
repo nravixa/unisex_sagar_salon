@@ -37,9 +37,9 @@ export default function BeforeAfter() {
   }, [isResizing]);
 
   return (
-    <section className="py-16 lg:py-24 bg-secondary">
+    <section className="py-12 md:py-20 lg:py-24 bg-secondary">
       <div className="container mx-auto px-6 md:px-12">
-        <SectionHeading number="04" className="mb-16 md:mb-24">
+        <SectionHeading number="04" className="mb-12 md:mb-16 lg:mb-24">
           THE TRANSFORMATION
         </SectionHeading>
 
@@ -59,22 +59,23 @@ export default function BeforeAfter() {
             handleMove(e.touches[0].clientX);
           }}
         >
-          {/* Before Image (Background) */}
-          <div className="absolute inset-0 w-full h-full grayscale">
+          {/* Before Image Layer */}
+          <div className="absolute inset-0 w-full h-full grayscale z-0">
             <PremiumImage 
               src={beforeImg} 
               alt="Before Transformation" 
               className="w-full h-full"
               hover={false}
+              priority={true}
             />
-          </div>
-          <div className="absolute top-6 left-6 font-sans text-[10px] tracking-[0.3em] uppercase text-cream/70 bg-primary/40 px-3 py-1 backdrop-blur-sm z-10 pointer-events-none">
-            Before
+            <div className="absolute top-4 left-4 md:top-6 md:left-6 font-sans text-[9px] md:text-[10px] tracking-[0.3em] text-cream bg-primary/40 px-3 py-1.5 md:px-4 md:py-2 rounded-full backdrop-blur-md z-10 pointer-events-none shadow-lg border border-cream/10">
+              BEFORE
+            </div>
           </div>
 
-          {/* After Image (Clipped) */}
+          {/* After Image Layer (Clipped) */}
           <div 
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover z-20"
             style={{ clipPath: `polygon(${sliderPosition}% 0, 100% 0, 100% 100%, ${sliderPosition}% 100%)` }}
           >
             <PremiumImage 
@@ -82,9 +83,10 @@ export default function BeforeAfter() {
               alt="After Transformation" 
               className="absolute inset-0 w-full h-full"
               hover={false}
+              priority={true}
             />
-            <div className="absolute top-6 right-6 font-sans text-[10px] tracking-[0.3em] uppercase text-cream/70 bg-primary/40 px-3 py-1 backdrop-blur-sm z-10 pointer-events-none">
-              After
+            <div className="absolute top-4 right-4 md:top-6 md:right-6 font-sans text-[9px] md:text-[10px] tracking-[0.3em] text-cream bg-primary/40 px-3 py-1.5 md:px-4 md:py-2 rounded-full backdrop-blur-md z-10 pointer-events-none shadow-lg border border-cream/10">
+              AFTER
             </div>
           </div>
 
