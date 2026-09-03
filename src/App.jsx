@@ -6,7 +6,6 @@ import Hero from './components/Hero';
 import Marquee from './components/Marquee';
 import Philosophy from './components/Philosophy';
 import Services from './components/Services';
-import FeaturedService from './components/FeaturedService';
 import Lookbook from './components/Lookbook';
 import BeforeAfter from './components/BeforeAfter';
 import Stylists from './components/Stylists';
@@ -151,7 +150,6 @@ function App() {
           <Marquee />
           <Philosophy />
           <Services />
-          <FeaturedService />
           <Lookbook />
           <BeforeAfter />
           <Stylists />

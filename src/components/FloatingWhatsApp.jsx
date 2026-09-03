@@ -3,7 +3,7 @@ import { motion, useReducedMotion } from 'framer-motion';
 export default function FloatingWhatsApp() {
   const shouldReduceMotion = useReducedMotion();
   
-  const phoneNumber = "918329484163";
+  const phoneNumber = "917038009048";
   const message = encodeURIComponent("Hi, I would like to know more about the services at SAGAR Hair Studio & Unisex Salon.");
   const waUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 

@@ -1,8 +1,119 @@
+import haircutImg from '../assets/Images/haircut.jpg';
+import hairtreatmentImg from '../assets/Images/hairtreatment.jpg';
+import haircolourImg from '../assets/Images/haircolour.jpg';
+import straightBlowDryImg from '../assets/Images/Straight-Blow-Dry.jpg';
+import ironhairImg from '../assets/Images/ironhair.jpg';
+import hairspaImg from '../assets/Images/hairspa.jpg';
+import hairspa1Img from '../assets/Images/hairspa1.jpg';
+import waxImg from '../assets/Images/wax.jpg';
+import detanImg from '../assets/Images/detan.jpg';
+import manicureImg from '../assets/Images/menicure.jpg';
+import cleanupImg from '../assets/Images/cleanup.jpg';
+import hydrafacialImg from '../assets/Images/hydrafacial.jpg';
+import threadingImg from '../assets/Images/Threading.png';
+import bodyPolishingImg from '../assets/Images/body-polishing.jpg';
+
 export const serviceCategories = [
+  {
+    id: "hair",
+    title: "HAIR",
+    image: haircutImg,
+    hasToggle: false,
+    services: [
+      { name: "Haircut", gents: 250, ladies: 600 },
+      { name: "Haircut with Wash", gents: 300, ladies: 700 },
+      { name: "Haircut (Sagar)", gents: 300, ladies: 600 },
+      { name: "Haircut (Sagar) with Wash", gents: 350, ladies: 700 },
+      { name: "Child Boy Haircut", gents: 250, ladies: "—" },
+      { name: "Child Girl Haircut", gents: "—", ladies: 400 },
+      { name: "Head Massage", gents: 350, ladies: 500 },
+    ]
+  },
+  {
+    id: "hair-spa",
+    title: "HAIR SPA",
+    image: hairtreatmentImg,
+    hasToggle: false,
+    services: [
+      { name: "Loreal Hair Spa", gents: "700 onwards", ladies: "1200 onwards" },
+      { name: "Hair Smoothing Spa", gents: "800 onwards", ladies: "1400 onwards" },
+      { name: "Anti Dandruff Hair Spa", gents: "800 onwards", ladies: "1500 onwards" },
+      { name: "Hair Repairing Spa", gents: "1000 onwards", ladies: "1600 onwards" },
+    ]
+  },
+  {
+    id: "hair-colour",
+    title: "HAIR COLOUR",
+    image: haircolourImg,
+    hasToggle: false,
+    services: [
+      { name: "Root Touchup", gents: "Contact for Price", ladies: "1200 onwards" },
+      { name: "Global", gents: "800 onwards", ladies: "3000 onwards" },
+      { name: "Highlight", gents: "Contact for Price", ladies: "400 / strip" },
+      { name: "Global Highlight", gents: "1500 onwards", ladies: "3500 onwards" },
+      { name: "Global + Highlight", gents: "2500 onwards", ladies: "6000 onwards" },
+    ]
+  },
+  {
+    id: "blowdry-styling",
+    title: "BLOW DRY & STYLING",
+    image: straightBlowDryImg,
+    hasToggle: false,
+    singlePrice: true,
+    services: [
+      { name: "Straight Blow Dry", price: "400 onwards" },
+      { name: "Curls Blow Dry", price: "500 onwards" },
+    ]
+  },
+  {
+    id: "ironing",
+    title: "IRONING",
+    image: ironhairImg,
+    hasToggle: false,
+    singlePrice: true,
+    services: [
+      { name: "Straight", price: "800 onwards" },
+      { name: "Tong Curls", price: "1000 onwards" },
+    ]
+  },
+  {
+    id: "hair-treatment",
+    title: "HAIR TREATMENT",
+    image: hairspa1Img,
+    hasToggle: false,
+    services: [
+      { name: "Rebonding", gents: 3500, ladies: "6000 onwards" },
+      { name: "Smoothing", gents: 2500, ladies: "5000 onwards" },
+      { name: "Basic Keratin", gents: 2000, ladies: "4000 onwards" },
+      { name: "Botox", gents: 3000, ladies: "6000 onwards" },
+      { name: "Nano Plastia", gents: 4000, ladies: "7000 onwards" },
+    ]
+  },
+  {
+    id: "threading-wax",
+    title: "THREADING / STRIPLESS WAX",
+    image: threadingImg,
+    hasToggle: false,
+    columnLabels: ["Thread", "Wax"],
+    services: [
+      { name: "Eyebrow", thread: 50, wax: null },
+      { name: "Upper Lips", thread: 20, wax: 60 },
+      { name: "Forehead", thread: 30, wax: 60 },
+      { name: "Lower Lips", thread: 20, wax: 60 },
+      { name: "Chin", thread: 40, wax: 60 },
+      { name: "Full Chin", thread: 60, wax: 100 },
+      { name: "Side Lock", thread: 100, wax: 200 },
+      { name: "Jawline", thread: 50, wax: 80 },
+      { name: "Neck", thread: 80, wax: 150 },
+      { name: "Full Face", thread: 250, wax: 400 },
+      { name: "B. Wax", thread: null, wax: 1800 },
+      { name: "Nose", thread: null, wax: 60 },
+    ]
+  },
   {
     id: "waxing",
     title: "WAXING",
-    image: "/images/services/cat-waxing.jpg",
+    image: waxImg,
     hasToggle: true,
     toggleLabels: ["Normal Waxing", "Rica Waxing"],
     services: [
@@ -15,12 +126,13 @@ export const serviceCategories = [
       { name: "Chest", gents: 400, ladies: 300, gentsRica: 500, ladiesRica: 400 },
       { name: "Back Half", gents: 350, ladies: 250, gentsRica: 400, ladiesRica: 300 },
       { name: "Full Back", gents: 500, ladies: 400, gentsRica: 600, ladiesRica: 500 },
+      { name: "Full Body", gents: 3000, ladies: 2000, gentsRica: 4000, ladiesRica: 3000 },
     ]
   },
   {
     id: "bleach-detan",
     title: "BLEACH / DE-TAN",
-    image: "/images/services/cat-bleach.jpg",
+    image: detanImg,
     hasToggle: false,
     services: [
       { name: "Full Face", gents: 400, ladies: 400 },
@@ -36,7 +148,7 @@ export const serviceCategories = [
   {
     id: "mani-pedi",
     title: "MANICURE & PEDICURE",
-    image: "/images/services/cat-mani-pedi.jpg",
+    image: manicureImg,
     hasToggle: false,
     services: [
       { name: "Manicure", gents: 600, ladies: 600 },
@@ -51,7 +163,7 @@ export const serviceCategories = [
   {
     id: "cleanup",
     title: "CLEAN UP",
-    image: "/images/services/cat-cleanup.jpg",
+    image: cleanupImg,
     hasToggle: false,
     services: [
       { name: "Instant Clean Up", gents: 600, ladies: 600 },
@@ -62,7 +174,7 @@ export const serviceCategories = [
   {
     id: "facial",
     title: "FACIAL / DE-TAN",
-    image: "/images/services/cat-facial.jpg",
+    image: hydrafacialImg,
     hasToggle: false,
     services: [
       { name: "Fruit Facial", gents: 1000, ladies: 1000 },
@@ -79,7 +191,7 @@ export const serviceCategories = [
   {
     id: "polishing",
     title: "BODY POLISHING",
-    image: "/images/services/cat-polishing.jpg",
+    image: bodyPolishingImg,
     hasToggle: false,
     singlePrice: true,
     services: [
@@ -87,6 +199,7 @@ export const serviceCategories = [
       { name: "Leg Polishing", price: 1000 },
       { name: "Back Polishing", price: 600 },
       { name: "Full Body Polishing", price: 3500 },
+      { name: "Full Body Massage", duration: "60 min", price: 1500 },
     ]
   }
 ];

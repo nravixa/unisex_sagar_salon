@@ -4,7 +4,7 @@ import { useRef } from 'react';
 import { TextReveal } from './ui/animations/TextReveal';
 import { FadeUp } from './ui/animations/FadeUp';
 import { Sparkles } from 'lucide-react';
-import heroImage from '../assets/Images/herosection.png';
+import heroImage from '../assets/Images/herosection.jpeg';
 
 export default function Hero() {
   const containerRef = useRef(null);
@@ -35,6 +35,8 @@ export default function Hero() {
             src={heroImage}
             alt="SAGAR Hair Studio Luxury Experience"
             className="w-full h-full object-cover object-center"
+            loading="eager"
+            fetchPriority="high"
             initial={{ scale: 1.1 }}
             animate={{ scale: 1 }}
             transition={{ duration: 10, ease: "linear" }}
@@ -51,7 +53,7 @@ export default function Hero() {
       </motion.div>
 
       {/* Content */}
-      <div className="container mx-auto px-6 md:px-12 relative z-10 w-full h-full flex flex-col items-center justify-start text-center mt-2 md:mt-8">
+      <div className="container mx-auto px-6 md:px-12 relative z-10 w-full h-full flex flex-col items-center justify-start text-center mt-2 md:mt-4">
 
         {/* Eyebrow */}
         <FadeUp delay={0.4} duration={1} distance={20} className="flex items-center gap-2 mb-7 md:mb-5">
@@ -62,7 +64,7 @@ export default function Hero() {
         </FadeUp>
 
         {/* Main Title - Mobile (Visible only on small screens) */}
-        <motion.div 
+        <motion.div
           className="flex md:hidden flex-col items-center w-full max-w-5xl mx-auto mb-7"
           initial="hidden"
           whileInView="visible"
@@ -109,7 +111,7 @@ export default function Hero() {
         {/* CTA Buttons */}
         <FadeUp delay={1.6} duration={1} distance={20} className="flex flex-col gap-[14px] w-full max-w-[280px] sm:max-w-xs md:max-w-[320px] mx-auto">
           <Button
-            href="https://wa.me/918329484163?text=Hello%20SAGAR%20Hair%20Studio%20%26%20Unisex%20Salon%2C%0AI%20would%20like%20to%20book%20an%20appointment.%0A%0AMy%20Requirements%3A%0AName%3A%0AService%20Required%3A%0APreferred%20Date%3A%0APreferred%20Time%3A%0A%0APlease%20let%20me%20know%20the%20available%20slot.%20Thank%20you."
+            href="https://wa.me/917038009048?text=Hello%20SAGAR%20Hair%20Studio%20%26%20Unisex%20Salon%2C%0AI%20would%20like%20to%20book%20an%20appointment.%0A%0AMy%20Requirements%3A%0AName%3A%0AService%20Required%3A%0APreferred%20Date%3A%0APreferred%20Time%3A%0A%0APlease%20let%20me%20know%20the%20available%20slot.%20Thank%20you."
             target="_blank"
             rel="noopener noreferrer"
             magnetic={false}

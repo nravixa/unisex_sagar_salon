@@ -31,11 +31,12 @@ export default function Lookbook() {
       case 0: return "md:col-span-7 md:row-span-2 aspect-[4/5] md:aspect-auto min-h-[400px]"; // Large feature portrait
       case 1: return "md:col-span-5 md:row-span-1 aspect-square md:aspect-auto min-h-[300px]"; // Square top right
       case 2: return "md:col-span-5 md:row-span-1 aspect-[4/3] md:aspect-auto min-h-[300px]"; // Landscape bottom right
-      case 3: return "md:col-span-4 md:row-span-2 aspect-[3/4] md:aspect-auto min-h-[400px]"; // Tall editorial
-      case 4: return "md:col-span-4 md:row-span-1 aspect-square md:aspect-auto min-h-[300px]"; // Small square center
-      case 5: return "md:col-span-4 md:row-span-1 aspect-square md:aspect-auto min-h-[300px]"; // Small square right
+      case 3: return "md:col-span-4 md:row-span-1 aspect-square md:aspect-auto min-h-[300px]"; // Hair Spa
+      case 4: return "md:col-span-4 md:row-span-1 aspect-square md:aspect-auto min-h-[300px]"; // Manicure
+      case 5: return "md:col-span-4 md:row-span-1 aspect-square md:aspect-auto min-h-[300px]"; // Pedicure
       case 6: return "md:col-span-8 md:row-span-2 aspect-[16/9] md:aspect-auto min-h-[300px]"; // Large landscape span
-      case 7: return "md:col-span-4 md:row-span-2 aspect-[3/4] md:aspect-auto min-h-[400px]"; // Tall editorial span
+      case 7: return "md:col-span-4 md:row-span-1 aspect-square md:aspect-auto min-h-[300px]"; // Square
+      case 8: return "md:col-span-4 md:row-span-1 aspect-square md:aspect-auto min-h-[300px]"; // Square
       default: return "md:col-span-4 md:row-span-1 aspect-square md:aspect-auto min-h-[300px]";
     }
   };

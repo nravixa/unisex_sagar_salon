@@ -3,28 +3,23 @@ export default function Footer() {
   const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
 
   return (
-    <footer id="footer-section" className="bg-primary pt-16 pb-8 border-t border-cream/10">
-      <div className="container mx-auto px-6 md:px-12 flex flex-col items-center">
-
-        <div className="text-center mb-16 max-w-2xl">
-          <h2 className="font-serif text-fluid-hero text-cream leading-none tracking-tighter mb-4">
-            SAGAR
-          </h2>
-          <span className="font-sans text-[10px] md:text-xs tracking-[0.4em] uppercase text-gold-light block mb-6">
-            Hair Studio & Unisex Salon
-          </span>
-          <p className="font-serif italic text-muted text-lg lg:text-xl">
-            "Premium hair, beauty and self-care experiences crafted for confidence and elegance."
-          </p>
-        </div>
-
-
-        <div className="w-full flex flex-row justify-center items-center gap-3 md:gap-8 border-t border-cream/10 pt-8 whitespace-nowrap overflow-visible">
+    <footer id="footer-section" className="bg-primary py-8 border-t border-cream/10">
+      <div className="container mx-auto px-6 md:px-12 flex flex-wrap justify-center items-center gap-3 sm:gap-6 md:gap-8 text-center">
           <a href={mapsUrl} target="_blank" rel="noopener noreferrer" className="font-sans text-[8px] md:text-[10px] tracking-[0.2em] uppercase text-muted hover:text-gold-light transition-colors">Google Maps</a>
+
+          <span className="text-cream/30 text-[8px] md:text-[10px]">|</span>
+
+          <a href="tel:7038009048" className="font-sans text-[8px] md:text-[10px] tracking-[0.2em] uppercase text-gold-light hover:text-white transition-colors">
+            7038009048
+          </a>
+
+          <span className="text-cream/30 text-[8px] md:text-[10px]">|</span>
 
           <span className="font-sans text-[8px] md:text-[10px] tracking-widest text-cream/60 uppercase">
             © 2026 <a href="https://nravixa.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-gold-light hover:text-white transition-colors">NRAVIXA</a>
           </span>
+
+          <span className="text-cream/30 text-[8px] md:text-[10px]">|</span>
 
           <a 
             href="/privacy-policy" 
@@ -39,7 +34,6 @@ export default function Footer() {
             Privacy Policy
           </a>
         </div>
-      </div>
     </footer>
   );
 }

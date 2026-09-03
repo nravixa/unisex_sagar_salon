@@ -2,20 +2,27 @@ import { useState, useRef, useEffect } from 'react';
 import { motion, useMotionValue, useTransform } from 'framer-motion';
 import { SectionHeading } from './ui/SectionHeading';
 import { PremiumImage } from './ui/PremiumImage';
-import beforeImg from '../assets/Images/before-image.png';
-import afterImg from '../assets/Images/after-image.png';
+import beforeImg from '../assets/Images/before-image.jpeg';
+import afterImg from '../assets/Images/after-image.jpeg';
 
 export default function BeforeAfter() {
   const [isResizing, setIsResizing] = useState(false);
   const [sliderPosition, setSliderPosition] = useState(50);
   const containerRef = useRef(null);
 
+  const reqRef = useRef(null);
+
   const handleMove = (clientX) => {
     if (!containerRef.current || !isResizing) return;
-    const rect = containerRef.current.getBoundingClientRect();
-    const x = Math.max(0, Math.min(clientX - rect.left, rect.width));
-    const percent = (x / rect.width) * 100;
-    setSliderPosition(percent);
+    if (reqRef.current) cancelAnimationFrame(reqRef.current);
+    
+    reqRef.current = requestAnimationFrame(() => {
+      if (!containerRef.current) return;
+      const rect = containerRef.current.getBoundingClientRect();
+      const x = Math.max(0, Math.min(clientX - rect.left, rect.width));
+      const percent = (x / rect.width) * 100;
+      setSliderPosition(percent);
+    });
   };
 
   const handleMouseMove = (e) => handleMove(e.clientX);
@@ -23,12 +30,13 @@ export default function BeforeAfter() {
 
   useEffect(() => {
     if (isResizing) {
-      window.addEventListener('mousemove', handleMouseMove);
-      window.addEventListener('touchmove', handleTouchMove);
+      window.addEventListener('mousemove', handleMouseMove, { passive: true });
+      window.addEventListener('touchmove', handleTouchMove, { passive: true });
       window.addEventListener('mouseup', () => setIsResizing(false));
       window.addEventListener('touchend', () => setIsResizing(false));
     }
     return () => {
+      if (reqRef.current) cancelAnimationFrame(reqRef.current);
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('touchmove', handleTouchMove);
       window.removeEventListener('mouseup', () => setIsResizing(false));
@@ -43,7 +51,7 @@ export default function BeforeAfter() {
           THE TRANSFORMATION
         </SectionHeading>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -61,9 +69,9 @@ export default function BeforeAfter() {
         >
           {/* Before Image Layer */}
           <div className="absolute inset-0 w-full h-full grayscale z-0">
-            <PremiumImage 
-              src={beforeImg} 
-              alt="Before Transformation" 
+            <PremiumImage
+              src={beforeImg}
+              alt="Before Transformation"
               className="w-full h-full"
               hover={false}
               priority={true}
@@ -74,13 +82,13 @@ export default function BeforeAfter() {
           </div>
 
           {/* After Image Layer (Clipped) */}
-          <div 
+          <div
             className="absolute inset-0 w-full h-full object-cover z-20"
             style={{ clipPath: `polygon(${sliderPosition}% 0, 100% 0, 100% 100%, ${sliderPosition}% 100%)` }}
           >
-            <PremiumImage 
-              src={afterImg} 
-              alt="After Transformation" 
+            <PremiumImage
+              src={afterImg}
+              alt="After Transformation"
               className="absolute inset-0 w-full h-full"
               hover={false}
               priority={true}
@@ -91,7 +99,7 @@ export default function BeforeAfter() {
           </div>
 
           {/* Slider Line & Handle */}
-          <div 
+          <div
             className="absolute top-0 bottom-0 w-0.5 bg-gold-light z-20 transition-transform duration-75"
             style={{ left: `${sliderPosition}%`, transform: 'translateX(-50%)' }}
           >

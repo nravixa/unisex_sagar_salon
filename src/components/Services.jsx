@@ -13,7 +13,7 @@ export default function Services() {
 
   const getWhatsAppLink = (categoryName) => {
     const text = encodeURIComponent(`Hi SAGAR Hair Studio, I would like to book an appointment for ${categoryName}.`);
-    return `https://wa.me/918329484163?text=${text}`;
+    return `https://wa.me/917038009048?text=${text}`;
   };
 
   const activeData = serviceCategories.find(c => c.id === activeCategory);
@@ -160,42 +160,73 @@ function ServiceList({ category, isRica, setIsRica, getWhatsAppLink }) {
 
       <div className="flex flex-col border-t border-cream/10">
         {/* Table Header */}
-        <div className="flex items-center py-4 border-b border-cream/10 font-sans text-[10px] tracking-widest uppercase text-muted">
+        <div className="flex items-center py-4 border-b border-cream/10 font-sans text-[10px] sm:text-xs tracking-widest uppercase text-muted">
           <div className="flex-1">Service</div>
-          {!category.singlePrice && (
-            <div className="flex gap-8 md:gap-16 text-right">
-              <div className="w-16 md:w-20">Gents</div>
-              <div className="w-16 md:w-20">Ladies</div>
+          {category.columnLabels ? (
+            <div className="flex gap-6 sm:gap-8 md:gap-16 text-right">
+              <div className="w-20 sm:w-24 md:w-28">{category.columnLabels[0]}</div>
+              <div className="w-20 sm:w-24 md:w-28">{category.columnLabels[1]}</div>
             </div>
-          )}
-          {category.singlePrice && (
-            <div className="w-24 text-right">Price</div>
+          ) : !category.singlePrice ? (
+            <div className="flex gap-6 sm:gap-8 md:gap-16 text-right">
+              <div className="w-20 sm:w-24 md:w-28">Gents</div>
+              <div className="w-20 sm:w-24 md:w-28">Ladies</div>
+            </div>
+          ) : (
+            <div className="w-28 sm:w-32 text-right">Price</div>
           )}
         </div>
 
         {/* Rows */}
-        {category.services.map((svc, i) => (
-          <div key={i} className="flex flex-col sm:flex-row sm:items-center py-5 border-b border-cream/5 hover:bg-primary/20 transition-colors gap-2 sm:gap-0">
-            <div className="flex-1 font-serif text-lg md:text-xl text-cream/90">{svc.name}</div>
-            
-            {!category.singlePrice && (
-              <div className="flex gap-8 md:gap-16 text-right font-sans text-sm md:text-base text-gold-light self-end sm:self-auto">
-                <div className="w-16 md:w-20">
-                  {svc.isString ? `₹${svc.gents}` : `₹${isRica && svc.gentsRica ? svc.gentsRica : svc.gents}`}
-                </div>
-                <div className="w-16 md:w-20">
-                  {svc.isString ? `₹${svc.ladies}` : `₹${isRica && svc.ladiesRica ? svc.ladiesRica : svc.ladies}`}
-                </div>
+        {category.services.map((svc, i) => {
+          const gentsVal = isRica && svc.gentsRica ? svc.gentsRica : svc.gents;
+          const ladiesVal = isRica && svc.ladiesRica ? svc.ladiesRica : svc.ladies;
+
+          const col1Val = category.columnLabels ? svc.thread : gentsVal;
+          const col2Val = category.columnLabels ? svc.wax : ladiesVal;
+
+          const formatPrice = (val) => {
+            if (val === null || val === undefined || val === "—" || val === "-") return "—";
+            if (typeof val === 'number') {
+              return `₹${val.toLocaleString('en-IN')}`;
+            }
+            if (typeof val === 'string') {
+              if (val.startsWith("₹") || val === "Contact for Price" || val === "—") return val;
+              return `₹${val}`;
+            }
+            return `₹${val}`;
+          };
+
+          return (
+            <div key={i} className="flex flex-col sm:flex-row sm:items-center py-4 sm:py-5 border-b border-cream/5 hover:bg-primary/20 transition-colors gap-2 sm:gap-0">
+              <div className="flex-1 flex flex-wrap items-baseline gap-2 sm:gap-3">
+                <span className="font-serif text-base sm:text-lg md:text-xl text-cream/90">{svc.name}</span>
+                {svc.duration && (
+                  <span className="font-sans text-[10px] sm:text-xs tracking-wider text-gold-light/80 uppercase font-light">({svc.duration})</span>
+                )}
               </div>
-            )}
-            
-            {category.singlePrice && (
-              <div className="w-24 text-right font-sans text-sm md:text-base text-gold-light self-end sm:self-auto">
-                ₹{svc.price}
-              </div>
-            )}
-          </div>
-        ))}
+              
+              {category.columnLabels || !category.singlePrice ? (
+                <div className="flex gap-6 sm:gap-8 md:gap-16 text-right font-sans text-xs sm:text-sm md:text-base text-gold-light self-end sm:self-auto">
+                  <div className="w-20 sm:w-24 md:w-28 flex justify-end">
+                    <span className={col1Val === "Contact for Price" ? "text-cream/60 text-[10px] sm:text-xs italic font-sans" : ""}>
+                      {formatPrice(col1Val)}
+                    </span>
+                  </div>
+                  <div className="w-20 sm:w-24 md:w-28 flex justify-end">
+                    <span className={col2Val === "Contact for Price" ? "text-cream/60 text-[10px] sm:text-xs italic font-sans" : ""}>
+                      {formatPrice(col2Val)}
+                    </span>
+                  </div>
+                </div>
+              ) : (
+                <div className="w-28 sm:w-32 text-right font-sans text-xs sm:text-sm md:text-base text-gold-light self-end sm:self-auto flex justify-end">
+                  {formatPrice(svc.price)}
+                </div>
+              )}
+            </div>
+          );
+        })}
       </div>
 
       <div className="mt-8 flex justify-center lg:justify-start">
