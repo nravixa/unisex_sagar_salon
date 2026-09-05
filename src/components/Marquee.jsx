@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 
 export default function Marquee() {
-  const text = "HAIR • BEAUTY • STYLE • CONFIDENCE • SELF CARE • SAGAR • ";
+  const text = "HAIR • BEAUTY • STYLE • CONFIDENCE • SELF CARE • NAILS • SAGAR • ";
   // Repeat the text to ensure continuous scrolling without visual breaks
   const repeatedText = text.repeat(4);
 

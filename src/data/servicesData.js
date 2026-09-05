@@ -20,11 +20,11 @@ export const serviceCategories = [
     image: haircutImg,
     hasToggle: false,
     services: [
-      { name: "Haircut", gents: 250, ladies: 600 },
-      { name: "Haircut with Wash", gents: 300, ladies: 700 },
-      { name: "Haircut (Sagar)", gents: 300, ladies: 600 },
-      { name: "Haircut (Sagar) with Wash", gents: 350, ladies: 700 },
-      { name: "Child Boy Haircut", gents: 250, ladies: "—" },
+      { name: "Haircut", gents: 300, ladies: 600 },
+      { name: "Haircut with Wash", gents: 350, ladies: 700 },
+      { name: "Haircut (Sagar)", gents: 400, ladies: 600 },
+      { name: "Haircut (Sagar) with Wash", gents: 450, ladies: 700 },
+      { name: "Child Boy Haircut", gents: 300, ladies: "—" },
       { name: "Child Girl Haircut", gents: "—", ladies: 400 },
       { name: "Head Massage", gents: 350, ladies: 500 },
     ]

@@ -4,7 +4,7 @@ export default function FloatingWhatsApp() {
   const shouldReduceMotion = useReducedMotion();
   
   const phoneNumber = "917038009048";
-  const message = encodeURIComponent("Hi, I would like to know more about the services at SAGAR Hair Studio & Unisex Salon.");
+  const message = encodeURIComponent("Hi, I would like to know more about the services at Sagar’s hair & beauty studio.");
   const waUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
   return (

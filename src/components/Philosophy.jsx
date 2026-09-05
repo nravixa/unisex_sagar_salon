@@ -40,7 +40,7 @@ export default function Intro() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="font-sans text-lg md:text-xl text-cream/80 font-light leading-relaxed max-w-xl"
             >
-              "At SAGAR Hair Studio, every cut, colour and transformation is designed around the person wearing it."
+              "At Sagar’s hair & beauty studio, every cut, colour and transformation is designed around the person wearing it."
             </motion.p>
             
             <motion.div 

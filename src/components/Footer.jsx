@@ -1,5 +1,5 @@
 export default function Footer() {
-  const address = "SAGAR Hair Studio & Unisex Salon in Kothrud Pune | Best Hair Salon, Makeup & Beauty Academy, Shop Number 5, Radha Krishna Building, Opposite Anandnagar Bus Stop, Near Hotel Palavi, Rambaug Colony, Kothrud, Pune, Maharashtra 411038";
+  const address = "Sagar’s hair & beauty studio in Kothrud Pune | Best Hair Salon, Makeup & Beauty Academy, Shop Number 5, Radha Krishna Building, Opposite Anandnagar Bus Stop, Near Hotel Palavi, Rambaug Colony, Kothrud, Pune, Maharashtra 411038";
   const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
 
   return (

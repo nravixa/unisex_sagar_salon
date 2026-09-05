@@ -17,7 +17,7 @@ export default function PrivacyPolicy() {
           
           <h2 className="text-2xl mt-12 mb-6 font-serif">1. Introduction</h2>
           <p className="mb-6">
-            Welcome to SAGAR Hair Studio & Unisex Salon. We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you as to how we look after your personal data when you visit our website and tell you about your privacy rights.
+            Welcome to Sagar’s hair & beauty studio. We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you as to how we look after your personal data when you visit our website and tell you about your privacy rights.
           </p>
 
           <h2 className="text-2xl mt-12 mb-6 font-serif">2. Information We Collect</h2>

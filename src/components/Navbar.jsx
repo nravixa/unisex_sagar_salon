@@ -9,7 +9,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const WA_LINK = "https://wa.me/917038009048?text=Hello%20SAGAR%20Hair%20Studio%20%26%20Unisex%20Salon%2C%0AI%20would%20like%20to%20book%20an%20appointment.%0A%0AMy%20Requirements%3A%0AName%3A%0AService%20Required%3A%0APreferred%20Date%3A%0APreferred%20Time%3A%0A%0APlease%20let%20me%20know%20the%20available%20slot.%20Thank%20you.";
+  const WA_LINK = "https://wa.me/917038009048?text=Hello%20Sagar%E2%80%99s%20hair%20%26%20beauty%20studio%2C%0AI%20would%20like%20to%20book%20an%20appointment.%0A%0AMy%20Requirements%3A%0AName%3A%0AService%20Required%3A%0APreferred%20Date%3A%0APreferred%20Time%3A%0A%0APlease%20let%20me%20know%20the%20available%20slot.%20Thank%20you.";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -67,11 +67,11 @@ export default function Navbar() {
                 window.scrollTo(0, 0);
               }}
               className="flex items-center group shrink-0 max-w-full"
-              aria-label="SAGAR Hair Studio & Unisex Salon Home"
+              aria-label="Sagar’s hair & beauty studio Home"
             >
               <img 
                 src={logoImg} 
-                alt="SAGAR Hair Studio & Unisex Salon Logo" 
+                alt="Sagar’s hair & beauty studio Logo" 
                 className="h-[58px] sm:h-[64px] md:h-[72px] lg:h-[80px] xl:h-[86px] 2xl:h-[95px] w-auto object-contain shrink-0 max-w-full transition-transform duration-300 group-hover:scale-105" 
                 width="200"
                 height="95"
@@ -102,7 +102,7 @@ export default function Navbar() {
             <a 
               href="tel:7038009048" 
               className="flex items-center gap-1.5 font-sans text-[10px] sm:text-xs tracking-widest text-cream hover:text-gold-light transition-all duration-300 py-1.5 px-2.5 sm:px-3 rounded-full border border-gold-light/30 bg-gold-light/10 hover:bg-gold-light/20 shrink-0"
-              aria-label="Call SAGAR Hair Studio at 7038009048"
+              aria-label="Call Sagar’s hair & beauty studio at 7038009048"
             >
               <Phone size={13} className="text-gold-light shrink-0" strokeWidth={1.5} />
               <span className="font-medium whitespace-nowrap">7038009048</span>

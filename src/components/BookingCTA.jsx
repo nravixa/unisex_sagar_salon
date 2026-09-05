@@ -34,7 +34,7 @@ export default function BookingCTA() {
           
           <div className="flex flex-col sm:flex-row gap-6 mt-8 w-full sm:w-auto">
             <Button 
-              href="https://wa.me/917038009048?text=Hello%20SAGAR%20Hair%20Studio%20%26%20Unisex%20Salon%2C%0AI%20would%20like%20to%20book%20an%20appointment.%0A%0AMy%20Requirements%3A%0AName%3A%0AService%20Required%3A%0APreferred%20Date%3A%0APreferred%20Time%3A%0A%0APlease%20let%20me%20know%20the%20available%20slot.%20Thank%20you." 
+              href="https://wa.me/917038009048?text=Hello%20Sagar%E2%80%99s%20hair%20%26%20beauty%20studio%2C%0AI%20would%20like%20to%20book%20an%20appointment.%0A%0AMy%20Requirements%3A%0AName%3A%0AService%20Required%3A%0APreferred%20Date%3A%0APreferred%20Time%3A%0A%0APlease%20let%20me%20know%20the%20available%20slot.%20Thank%20you." 
               target="_blank"
               rel="noopener noreferrer"
               icon 

@@ -2,9 +2,9 @@ import { MapPin, Phone, Clock, MessageCircle, Navigation, Calendar } from 'lucid
 import { motion } from 'framer-motion';
 
 export default function Contact() {
-  const address = "SAGAR Hair Studio & Unisex Salon in Kothrud Pune | Best Hair Salon, Makeup & Beauty Academy, Shop Number 5, Radha Krishna Building, Opposite Anandnagar Bus Stop, Near Hotel Palavi, Rambaug Colony, Kothrud, Pune, Maharashtra 411038";
+  const address = "Sagar’s hair & beauty studio in Kothrud Pune | Best Hair Salon, Makeup & Beauty Academy, Shop Number 5, Radha Krishna Building, Opposite Anandnagar Bus Stop, Near Hotel Palavi, Rambaug Colony, Kothrud, Pune, Maharashtra 411038";
   const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
-  const whatsappUrl = "https://wa.me/917038009048?text=Hello%20SAGAR%20Hair%20Studio%20%26%20Unisex%20Salon%2C%0AI%20would%20like%20to%20book%20an%20appointment.%0A%0AMy%20Requirements%3A%0AName%3A%0AService%20Required%3A%0APreferred%20Date%3A%0APreferred%20Time%3A%0A%0APlease%20let%20me%20know%20the%20available%20slot.%20Thank%20you.";
+  const whatsappUrl = "https://wa.me/917038009048?text=Hello%20Sagar%E2%80%99s%20hair%20%26%20beauty%20studio%2C%0AI%20would%20like%20to%20book%20an%20appointment.%0A%0AMy%20Requirements%3A%0AName%3A%0AService%20Required%3A%0APreferred%20Date%3A%0APreferred%20Time%3A%0A%0APlease%20let%20me%20know%20the%20available%20slot.%20Thank%20you.";
 
   return (
     <section id="contact" className="py-16 lg:py-24 bg-primary">
@@ -21,11 +21,8 @@ export default function Contact() {
           >
             <div>
               <h2 className="font-serif text-3xl md:text-5xl text-cream mb-2">
-                SAGAR HAIR STUDIO
+                SAGAR’S HAIR & BEAUTY STUDIO
               </h2>
-              <span className="font-sans text-[10px] tracking-[0.3em] uppercase text-gold-light">
-                & Unisex Salon
-              </span>
             </div>
 
             <div className="flex flex-col gap-8">
@@ -39,7 +36,7 @@ export default function Contact() {
                     rel="noopener noreferrer" 
                     className="font-sans text-sm text-cream/80 hover:text-gold-light transition-colors leading-relaxed block"
                   >
-                    SAGAR Hair Studio & Unisex Salon in Kothrud Pune<br />
+                    Sagar’s hair & beauty studio in Kothrud Pune<br />
                     Best Hair Salon, Makeup & Beauty Academy<br />
                     Shop Number 5, Radha Krishna Building<br />
                     Opposite Anandnagar Bus Stop, Near Hotel Palavi<br />
@@ -102,8 +99,8 @@ export default function Contact() {
             className="h-[400px] lg:h-full min-h-[400px] relative bg-secondary overflow-hidden border border-cream/10 transition-all duration-1000"
           >
             <iframe 
-              src={`https://maps.google.com/maps?q=${encodeURIComponent("SAGAR Hair Studio & Unisex Salon in Kothrud Pune")}&t=&z=15&ie=UTF8&iwloc=&output=embed`}
-              title="SAGAR Hair Studio Google Maps Location"
+              src={`https://maps.google.com/maps?q=${encodeURIComponent("Sagar’s hair & beauty studio in Kothrud Pune")}&t=&z=15&ie=UTF8&iwloc=&output=embed`}
+              title="Sagar’s hair & beauty studio Google Maps Location"
               width="100%" 
               height="100%" 
               style={{ border: 0 }} 

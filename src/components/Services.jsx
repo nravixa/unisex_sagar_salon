@@ -12,7 +12,7 @@ export default function Services() {
   const [isRica, setIsRica] = useState(false);
 
   const getWhatsAppLink = (categoryName) => {
-    const text = encodeURIComponent(`Hi SAGAR Hair Studio, I would like to book an appointment for ${categoryName}.`);
+    const text = encodeURIComponent(`Hi Sagar’s hair & beauty studio, I would like to book an appointment for ${categoryName}.`);
     return `https://wa.me/917038009048?text=${text}`;
   };
 
